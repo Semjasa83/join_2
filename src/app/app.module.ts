@@ -8,12 +8,18 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { HomeComponent } from './home/home.component';
+import { SummaryComponent } from './summary/summary.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { HeaderbarComponent } from './headerbar/headerbar.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    SummaryComponent,
+    SidenavComponent,
+    HeaderbarComponent,
   ],
   imports: [
     BrowserModule,

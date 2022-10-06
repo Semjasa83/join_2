@@ -1,0 +1,51 @@
+.sidenav {
+    align-items: center;
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-self: center;
+    position: relative;
+    width: 200px;
+
+    .logo {
+        margin-top: 3rem;
+        object-fit: cover;
+    }
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 5rem;
+    width: 100%;
+
+    .nav-icon {
+        padding-left: 3rem;
+
+        img {
+            object-fit: contain;
+            width: 24px;
+        }
+    }
+}
+
+.menu-bottom {
+    bottom: 2rem;
+    position: absolute;
+}
+
+tr {
+    color: var(--font-white-trans);
+    margin-bottom: 2rem;
+    width: 100%;
+
+    &:hover {
+        background-color: var(--menu-hover-bgr);
+        color: var(--font-white);
+    }
+    td {
+        padding-right: 1rem;
+    }
+}

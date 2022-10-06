@@ -1,28 +1,27 @@
-.menu-elements {
+
+.main {
     display: flex;
 }
 
-mat-toolbar {
-    height: 4rem;
-    background-color: white;
-    box-shadow: 0 6px 4px var(--shadow-color);
-    span {
-        margin-left: 6rem;
-    }
-}
-
-mat-sidenav {
-    height: 100vh;
-    width: 300px;
-    background-color: var(--primary-color);
+.main-spacer {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    img {
-        margin-top: 3rem;
-        object-fit: cover;
-    }
-    mat-icon {
-        color: white;
-    }
+    width: 100%;
+}
+
+router-outlet {
+    height: 100%;
+}
+
+/****** Z-Index ******/
+app-sidenav {
+    z-index: 2;
+}
+
+app-headerbar {
+    z-index: 2;
+}
+
+router-outlet {
+    z-index: 1;
 }
