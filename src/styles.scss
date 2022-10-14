@@ -3,6 +3,7 @@
 html,
 body {
     height: 100%;
+    background-color: var(--background-color);
 }
 body {
     margin: 0;
@@ -15,4 +16,10 @@ body {
     --font-white: #ffffff;
     --font-white-trans: #ffffff99;
     --menu-hover-bgr: #081931;
+    --background-color: #d9d9d916;
+    --font-blue: #28ABE2;
+}
+
+.bgr {
+    background-color: var(--background-color);
 }

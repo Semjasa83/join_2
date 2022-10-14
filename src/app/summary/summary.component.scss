@@ -1,0 +1,44 @@
+.summary-cmpl {
+    height: 100%;
+    width: 100%;
+}
+
+.headline-content {
+    display: flex;
+    align-items: center;
+    padding: 4rem;
+    .headline-1 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-right: 2rem;
+    }
+    .headline-txt {
+        padding: 0.5rem 1rem;
+        border-left: 2px solid var(--font-blue);
+    }
+}
+
+.summary-content {
+    margin: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.summary-cards {
+
+}
+
+.summary-greet {
+    display: flex;
+    flex-direction: column;
+    span {
+        font-size: 1.75rem;
+    }
+    .greet-user {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--font-blue);
+        margin-top: 1rem;
+    }
+}
