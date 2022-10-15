@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { SummaryComponent } from './summary/summary.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { HeaderbarComponent } from './headerbar/headerbar.component';
+import { AddtaskComponent } from './addtask/addtask.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { HeaderbarComponent } from './headerbar/headerbar.component';
     SummaryComponent,
     SidenavComponent,
     HeaderbarComponent,
+    AddtaskComponent,
   ],
   imports: [
     BrowserModule,
