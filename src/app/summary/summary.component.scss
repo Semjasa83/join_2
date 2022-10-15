@@ -1,64 +1,67 @@
 .summary-cmpl {
-    margin: 4rem;
     height: 100%;
+    margin: 4rem;
     width: 100%;
 }
 
 /***** Headline *****/
 .headline-content {
-    display: flex;
     align-items: center;
+    display: flex;
     padding-bottom: 2rem;
+    
     .headline-1 {
-        font-size: 2.25rem;
-        font-weight: 700;
         margin-right: 2rem;
     }
     .headline-txt {
+        border-left: 2px solid var(--font-blue);
         font-size: 1.25rem;
         padding: 0.5rem 1rem;
-        border-left: 2px solid var(--font-blue);
     }
 }
 
 /***** Summary Content *****/
 .summary-content {
-    margin-top: 2rem;
-    display: flex;
     align-items: center;
+    display: flex;
+    margin-top: 2rem;
 }
 
 /***** Cards *****/
 .summary-cards {
-
 }
 
 .counter-cards {
     display: flex;
     margin-bottom: 2rem;
+    
     .counter-card {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
         align-items: center;
         background-color: var(--background-light);
         border-radius: 1.5rem;
-        width: 120px;
-        height: 120px;
+        display: flex;
+        flex-direction: column;
+        height: 150px;
+        justify-content: center;
         margin-right: 2rem;
+        width: 170px;
+        
         &:last-child {
             margin-right: 0;
         }
         .task-count {
             display: flex;
             justify-content: center;
-            font-size: 3rem;
-            font-weight: 500;
-            padding: 1rem 0 1.5rem 0;
+            align-items: center;
+            padding: 0 1.5rem;
+            height: 50%;
         }
         .counter-info {
+            font-size: 1rem;
+            font-weight: 300;
+            padding: 0 1.5rem;
             text-align: center;
-            padding: 0 1rem;
+            height: 50%;
         }
     }
 }
@@ -66,23 +69,126 @@
 .urgency-task {
     background-color: var(--background-light);
     border-radius: 1.5rem;
-    height: 120px;
+    display: flex;
+    height: 150px;
+    margin-bottom: 2rem;
+    
+    .urgency-counter {
+        align-items: center;
+        border-right: 2px solid var(--border-light);
+        display: flex;
+        justify-content: center;
+        margin: 1.5rem;
+        width: 40%;
+    }
+    .urgency-info {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 60%;
+        
+        .urgency-date {
+            font-size: 1.25rem;
+            font-weight: 600;
+            padding-bottom: 1rem;
+        }
+        .urgency-date-txt {
+            font-size: 1rem;
+            font-weight: 300;
+            text-align: left;
+        }
+    }
 }
+
+.urgency-icon {
+    align-items: center;
+    background-color: var(--background-red);
+    border-radius: 100%;
+    color: var(--font-white);
+    display: flex;
+    height: 3rem;
+    justify-content: center;
+    margin-right: 1rem;
+    width: 3rem;
+    
+    mat-icon {
+        font-size: 2rem;
+        height: 2rem;
+        width: 2rem;
+    }
+}
+
+.urgency-status {
+    align-items: center;
+    display: flex;
+    flex-direction: column;;
+    justify-content: center;
+    
+    .urgency-count {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-right: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+    .urgency-description {
+        font-size: 1rem;
+        font-weight: 300;
+    }
+}
+
+.task-status {
+    display: flex;
+    height: 150px;
+    justify-content: space-between;
+    
+    .status-content {
+        align-items: center;
+        background-color: var(--background-light);
+        border-radius: 1.5rem;
+        display: flex;
+        justify-content: center;
+        width: 17rem;
+        
+        .status-icon {
+            align-items: center;
+            background-color: var(--primary-color);
+            border-radius: 100%;
+            color: var(--font-white);
+            display: flex;
+            height: 3rem;
+            justify-content: center;
+            margin-right: 1rem;
+            width: 3rem;
+        }
+        .status-count-cmpl {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            .status-count {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+
 
 /***** Greeting User *****/
 .summary-greet {
     display: flex;
     flex-direction: column;
     margin-left: 3rem;
+    
     span {
         font-size: 1.75rem;
     }
     .greet-user {
+        color: var(--font-blue);
         display: flex;
         flex-wrap: wrap;
         font-size: 2.25rem;
         font-weight: 700;
-        color: var(--font-blue);
         margin-top: 1rem;
     }
 }
