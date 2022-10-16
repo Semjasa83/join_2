@@ -1,0 +1,26 @@
+:host {
+    margin: 4rem;
+}
+
+.addtask-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 3rem;
+}
+
+.addtask-left {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    border-right: 1px solid var(--border-light);
+    padding-right: 2rem;
+}
+
+textarea {
+    height: 4rem;
+}
+
+mat-label {
+    color: var(--form-label);
+}

@@ -12,6 +12,12 @@ import { SummaryComponent } from './summary/summary.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { HeaderbarComponent } from './headerbar/headerbar.component';
 import { AddtaskComponent } from './addtask/addtask.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
+
 
 
 @NgModule({
@@ -30,6 +36,10 @@ import { AddtaskComponent } from './addtask/addtask.component';
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-.summary-cmpl {
+:host {
     margin: 4rem;
     width: 100%;
 }
@@ -27,9 +27,6 @@
 }
 
 /***** Cards *****/
-.summary-cards {
-}
-
 .counter-cards {
     display: flex;
     margin-bottom: 2rem;
@@ -49,18 +46,18 @@
             margin-right: 0;
         }
         .task-count {
-            display: flex;
-            justify-content: center;
             align-items: center;
-            padding: 0 1.5rem;
+            display: flex;
             height: 50%;
+            justify-content: center;
+            padding: 0 1.5rem;
         }
         .counter-info {
             font-size: 1rem;
             font-weight: 300;
+            height: 50%;
             padding: 0 1.5rem;
             text-align: center;
-            height: 50%;
         }
     }
 }
@@ -161,10 +158,11 @@
             width: 3rem;
         }
         .status-count-cmpl {
-            display: flex;
-            justify-content: center;
             align-items: center;
+            display: flex;
             flex-direction: column;
+            justify-content: center;
+            
             .status-count {
                 margin-bottom: 1rem;
             }
