@@ -2,26 +2,28 @@
 
 html,
 body {
-    height: 100%;
     background-color: var(--background-color);
+    height: 100%;
 }
 body {
-    margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
+    margin: 0;
 }
 
 :root {
+    --background-color: #d9d9d916;
+    --background-high: #FF3D00;
+    --background-light: #ffffff;
+    --background-low: #7AE228;
+    --background-med: #FFA800;
+    --border-light: #00000022;
+    --font-blue: #28ABE2;
+    --font-white-trans: #ffffff99;
+    --font-white: #ffffff;
+    --form-label: #00000055;
+    --menu-hover-bgr: #081931;
     --primary-color: #2A3647;
     --shadow-color: #00000022;
-    --font-white: #ffffff;
-    --font-white-trans: #ffffff99;
-    --menu-hover-bgr: #081931;
-    --background-color: #d9d9d916;
-    --background-light: #ffffff;
-    --font-blue: #28ABE2;
-    --background-red: #FF3D00;
-    --border-light: #00000022;
-    --form-label: #00000055;
 }
 
 .head-1 {

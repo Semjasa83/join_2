@@ -37,11 +37,37 @@
 
         <div class="addtask-right">
 
+            <span>Due date</span>
+            <mat-form-field appearance="outline">
+                <mat-label>MM/DD/YYYY</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
 
+            <span>Prio</span>
+            <div class="addtask-prio-btn">
+                <button mat-stroked-button>Urgent <mat-icon fontIcon="keyboard_double_arrow_up" class="addtask-urgent">
+                    </mat-icon></button>
+                <button mat-stroked-button>Medium <span class="addtask-medium">=</span></button>
+                <button mat-stroked-button>Low <mat-icon fontIcon="keyboard_double_arrow_down" class="addtask-low">
+                    </mat-icon></button>
+            </div>
+
+            <span>Subtasks</span>
+            <mat-form-field appearance="outline" class="addtask-sub">
+                <mat-label>Add new subtask</mat-label>
+                <input matInput>
+                <button matSuffix mat-button mat-icon-button><mat-icon fontIcon="add"></mat-icon></button>
+            </mat-form-field>
+            <div class="addtask-checkboxes">
+                <mat-checkbox>TEST 1</mat-checkbox>
+            </div>
         </div>
     </div>
 
-    <div class="addtask-buttons">
-
+    <div class="addtask-btns">
+        <button mat-stroked-button>Clear <mat-icon fontIcon="close" class="addtask-btn-clear"></mat-icon></button>
+        <button mat-stroked-button>Create Task <mat-icon fontIcon="check" class="addtask-btn-task"></mat-icon></button>
     </div>
 </form>

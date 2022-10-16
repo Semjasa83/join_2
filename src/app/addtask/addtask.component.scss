@@ -5,16 +5,68 @@
 .addtask-form {
     display: flex;
     flex-direction: column;
-    width: 100%;
     margin-top: 3rem;
+    width: 100%;
+}
+
+.addtask-content {
+    display: flex;
+    
+    span {
+        font-weight: 300;
+    }
 }
 
 .addtask-left {
+    border-right: 1px solid var(--border-light);
     display: flex;
     flex-direction: column;
-    width: 50%;
-    border-right: 1px solid var(--border-light);
     padding-right: 2rem;
+    width: 50%;
+}
+
+.addtask-right {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+    width: 50%;
+    mat-checkbox {
+        font-weight: 300;
+        margin-top: 0!important;
+    }
+}
+
+.addtask-prio-btn {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    button {
+        font-weight: 300;
+        width: 6rem;
+        
+        .addtask-urgent {
+            color: var(--background-high);
+            font-size: 1.5rem;
+        }
+        .addtask-medium {
+            color: var(--background-med);
+            font-size: 1.5rem;
+            margin-left: 2px;
+        }
+        .addtask-low {
+            color: var(--background-low);
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.addtask-sub {
+    &:first-child {
+        padding-bottom: 0;
+    }
+    &:last-child {
+        border: none;
+    }
 }
 
 textarea {
@@ -23,4 +75,25 @@ textarea {
 
 mat-label {
     color: var(--form-label);
+}
+
+.addtask-checkboxes {
+    margin-left: 1.5rem;
+}
+
+.addtask-btns {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 3rem;
+    width: 100%;
+    
+    button {
+        font-size: 1rem;
+        height: 3rem;
+        &:last-child {
+            background-color: var(--primary-color);
+            color: var(--font-white);
+        }
+    }
 }
