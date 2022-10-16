@@ -19,6 +19,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -30,6 +31,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     SidenavComponent,
     HeaderbarComponent,
     AddtaskComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

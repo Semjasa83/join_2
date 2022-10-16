@@ -1,0 +1,28 @@
+<div class="login-cmpl">
+    <img src="./assets/img/join-dark.png">
+    <div class="login-sign-up">
+        <span>Not a Join user?</span>
+        <button mat-stroked-button>Sign up</button>
+    </div>
+
+    <div class="login-card">
+        <span class="headline">Log in</span>
+
+        <hr class="hr-blue">
+
+        <mat-form-field appearance="outline" class="login-email">
+            <mat-label>Email</mat-label>
+            <input matInput>
+            <mat-icon matSuffix mat-button mat-icon-button fontIcon="mail_outline"></mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+</div>
