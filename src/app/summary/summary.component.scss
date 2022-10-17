@@ -1,6 +1,6 @@
 :host {
     margin: 4rem;
-    width: 100%;
+    width: 80%;
 }
 
 /***** Headline *****/
@@ -42,6 +42,10 @@
         margin-right: 2rem;
         width: 170px;
         
+        &:hover {
+            background-color: var(--primary-color);
+            color: var(--font-white);
+        }
         &:last-child {
             margin-right: 0;
         }
@@ -69,6 +73,15 @@
     height: 150px;
     margin-bottom: 2rem;
     
+    &:hover{
+        background-color: var(--primary-color);
+        color: var(--font-white);
+        cursor: pointer;
+        
+        .urgency-counter {
+            border-right: 2px solid var(--font-white);
+        }
+    }
     .urgency-counter {
         align-items: center;
         border-right: 2px solid var(--border-light);
@@ -146,6 +159,10 @@
         justify-content: center;
         width: 17rem;
         
+        &:hover {
+            background-color: var(--primary-color);
+            color: var(--font-white);
+        }
         .status-icon {
             align-items: center;
             background-color: var(--primary-color);
@@ -183,9 +200,10 @@
     .greet-user {
         color: var(--font-blue);
         display: flex;
-        flex-wrap: wrap;
         font-size: 2.25rem;
         font-weight: 700;
+        line-height: 2rem;
         margin-top: 1rem;
+        overflow-wrap: normal;
     }
 }

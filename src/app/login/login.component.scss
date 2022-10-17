@@ -24,6 +24,10 @@ img {
         background-color: var(--primary-color);
         color: var(--font-white);
         margin-left: 1rem;
+        
+        &:hover{
+            background-color: var(--font-blue);
+        }
     }
 }
 
@@ -62,12 +66,13 @@ mat-form-field {
 }
 
 .remember-login {
-    width: 100%;
-    display: flex;
     align-items: center;
-    justify-content: center;
+    display: flex;
     gap: 1rem;
+    justify-content: center;
     margin-bottom: 1rem;
+    width: 100%;
+    
     a {
         color: var(--font-blue);
         text-decoration: none;
@@ -76,14 +81,25 @@ mat-form-field {
 
 .login-btns {
     align-items: center;
-    width: 100%;
     display: flex;
-    justify-content: center;
     gap: 1rem;
-    button {
-        &:first-child{
-            background-color: var(--primary-color);
-            color: var(--font-white);
+    justify-content: center;
+    width: 100%;
+    
+    .login-btn {
+        background-color: var(--primary-color);
+        color: var(--font-white);
+        
+        &:hover{
+            background-color: var(--font-blue);
+        }
+    }
+    .guest-log-btn {
+        
+        &:hover{
+            border: 1px solid var(--font-blue);
+            color: var(--font-blue);
         }
     }
 }
+

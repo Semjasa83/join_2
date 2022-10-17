@@ -7,7 +7,7 @@
     justify-self: center;
     position: relative;
     width: 200px;
-
+    
     .logo {
         margin-top: 3rem;
         object-fit: cover;
@@ -20,9 +20,10 @@
     justify-content: center;
     margin-top: 5rem;
     width: 100%;
-
+    
     .nav-icon {
         padding-left: 3rem;
+        
 
         img {
             object-fit: contain;
@@ -40,7 +41,7 @@ tr {
     color: var(--font-white-trans);
     margin-bottom: 2rem;
     width: 100%;
-
+    
     &:hover {
         background-color: var(--menu-hover-bgr);
         color: var(--font-white);
