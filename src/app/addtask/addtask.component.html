@@ -47,11 +47,9 @@
 
             <span>Prio</span>
             <div class="addtask-prio-btn">
-                <button mat-stroked-button>Urgent <mat-icon fontIcon="keyboard_double_arrow_up" class="addtask-urgent">
-                    </mat-icon></button>
-                <button mat-stroked-button>Medium <span class="addtask-medium">=</span></button>
-                <button mat-stroked-button>Low <mat-icon fontIcon="keyboard_double_arrow_down" class="addtask-low">
-                    </mat-icon></button>
+                <button mat-stroked-button>Urgent <img src="./assets/img/urgent_col.svg" class="addtask-icon"></button>
+                <button mat-stroked-button>Medium <img src="./assets/img/med_col.svg" class="addtask-icon"></button>
+                <button mat-stroked-button>Low <img src="./assets/img/low_col.svg" class="addtask-icon"></button>
             </div>
 
             <span>Subtasks</span>
@@ -67,7 +65,7 @@
     </div>
 
     <div class="addtask-btns">
-        <button mat-stroked-button>Clear <mat-icon fontIcon="close" class="addtask-btn-clear"></mat-icon></button>
-        <button mat-stroked-button>Create Task <mat-icon fontIcon="check" class="addtask-btn-task"></mat-icon></button>
+        <button mat-stroked-button class="addtask-btn-clear">Clear <mat-icon fontIcon="close" ></mat-icon></button>
+        <button mat-stroked-button class="addtask-btn-task">Create Task <mat-icon fontIcon="check" ></mat-icon></button>
     </div>
 </form>

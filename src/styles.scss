@@ -17,6 +17,8 @@ body {
     --background-low: #7AE228;
     --background-med: #FFA800;
     --border-light: #00000022;
+    --border-black: #000000;
+    --font-grey: #00000077;
     --font-blue: #28ABE2;
     --font-white-trans: #ffffff99;
     --font-white: #ffffff;
@@ -41,3 +43,7 @@ body {
     font-weight: 700;
 }
 
+.head-4 {
+    font-size: 1.15rem;
+    font-weight: 700;
+}

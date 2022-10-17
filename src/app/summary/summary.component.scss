@@ -8,7 +8,7 @@
     align-items: center;
     display: flex;
     padding-bottom: 2rem;
-    
+
     .headline-1 {
         margin-right: 2rem;
     }
@@ -30,7 +30,7 @@
 .counter-cards {
     display: flex;
     margin-bottom: 2rem;
-    
+
     .counter-card {
         align-items: center;
         background-color: var(--background-light);
@@ -41,7 +41,7 @@
         justify-content: center;
         margin-right: 2rem;
         width: 170px;
-        
+
         &:hover {
             background-color: var(--primary-color);
             color: var(--font-white);
@@ -72,12 +72,12 @@
     display: flex;
     height: 150px;
     margin-bottom: 2rem;
-    
-    &:hover{
+
+    &:hover {
         background-color: var(--primary-color);
         color: var(--font-white);
         cursor: pointer;
-        
+
         .urgency-counter {
             border-right: 2px solid var(--font-white);
         }
@@ -96,7 +96,7 @@
         flex-direction: column;
         justify-content: center;
         width: 60%;
-        
+
         .urgency-date {
             font-size: 1.25rem;
             font-weight: 600;
@@ -120,20 +120,20 @@
     justify-content: center;
     margin-right: 1rem;
     width: 3rem;
-    
-    mat-icon {
-        font-size: 2rem;
-        height: 2rem;
-        width: 2rem;
+
+    .icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        object-fit: contain;
     }
 }
 
 .urgency-status {
     align-items: center;
     display: flex;
-    flex-direction: column;;
+    flex-direction: column;
     justify-content: center;
-    
+
     .urgency-count {
         font-size: 2rem;
         font-weight: 600;
@@ -150,7 +150,7 @@
     display: flex;
     height: 150px;
     justify-content: space-between;
-    
+
     .status-content {
         align-items: center;
         background-color: var(--background-light);
@@ -158,7 +158,7 @@
         display: flex;
         justify-content: center;
         width: 17rem;
-        
+
         &:hover {
             background-color: var(--primary-color);
             color: var(--font-white);
@@ -179,7 +179,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            
+
             .status-count {
                 margin-bottom: 1rem;
             }
@@ -187,13 +187,12 @@
     }
 }
 
-
 /***** Greeting User *****/
 .summary-greet {
     display: flex;
     flex-direction: column;
     margin-left: 3rem;
-    
+
     span {
         font-size: 1.75rem;
     }
