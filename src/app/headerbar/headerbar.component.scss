@@ -1,12 +1,35 @@
 mat-toolbar {
     background-color: white;
     box-shadow: 0 4px 8px var(--shadow-color);
+    display: flex;
     height: 4rem;
+    justify-content: space-between;
     width: 100%;
     
     span {
         font-size: 1rem;
         font-weight: 400;
         margin-left: 3rem;
+    }
+}
+
+.header-tools {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    
+    a {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        width: 100%;
+    }
+    .log-avatar {
+        border-radius: 100%;
+        border: 3px solid var(--border-black);
+        height: 2rem;
+        margin-left: 1rem;
+        width: 2rem;
     }
 }
