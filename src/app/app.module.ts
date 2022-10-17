@@ -20,6 +20,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { LoginComponent } from './login/login.component';
+import { BoardComponent } from './board/board.component';
 
 
 
@@ -32,6 +33,7 @@ import { LoginComponent } from './login/login.component';
     HeaderbarComponent,
     AddtaskComponent,
     LoginComponent,
+    BoardComponent,
   ],
   imports: [
     BrowserModule,
