@@ -47,3 +47,11 @@ body {
     font-size: 1.15rem;
     font-weight: 700;
 }
+
+.bg-transparent {
+    .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+        opacity: 0.4;
+        background-color: var(--background-light);
+        border-radius: 6px;
+    }
+}
