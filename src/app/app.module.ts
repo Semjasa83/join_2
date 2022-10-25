@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { HomeComponent } from './home/home.component';
 import { SummaryComponent } from './summary/summary.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { HeaderbarComponent } from './headerbar/headerbar.component';
@@ -21,19 +20,20 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { LoginComponent } from './login/login.component';
 import { BoardComponent } from './board/board.component';
+import { MainComponent } from './main/main.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     SummaryComponent,
     SidenavComponent,
     HeaderbarComponent,
     AddtaskComponent,
     LoginComponent,
     BoardComponent,
+    MainComponent,
   ],
   imports: [
     BrowserModule,
