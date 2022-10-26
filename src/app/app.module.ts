@@ -22,6 +22,7 @@ import { LoginComponent } from './login/login.component';
 import { BoardComponent } from './board/board.component';
 import { MainComponent } from './main/main.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ContactsComponent } from './contacts/contacts.component';
 
 
 
@@ -35,6 +36,7 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     BoardComponent,
     MainComponent,
+    ContactsComponent,
   ],
   imports: [
     BrowserModule,

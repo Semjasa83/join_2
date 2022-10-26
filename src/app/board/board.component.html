@@ -3,11 +3,18 @@
 
     <div class="board-tools">
 
-        <div class="searchtask">
+        <!-- <div class="searchtask">
             <input type="text" placeholder="Find Task"><mat-icon fontIcon="search" class="search-icon"></mat-icon>
-        </div>
+        </div> -->
+        <form class="searchtask">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Find Task</mat-label>
+                <input type="text" matInput placeholder="Find Task">
+                <mat-icon matSuffix>search</mat-icon>
+            </mat-form-field>
+        </form>
 
-        <button mat-stroked-button class="board-btn-addtask">Add Task <mat-icon fontIcon="add" ></mat-icon></button>
+        <button mat-stroked-button class="board-btn-addtask">Add Task <mat-icon fontIcon="add"></mat-icon></button>
     </div>
 </div>
 
@@ -38,6 +45,19 @@
             <span class="head-4">In progress</span>
             <mat-icon fontIcon="add" class="add-icon head-4"></mat-icon>
         </div>
+        <div class="board-task">
+            <div class="task-category">Design</div>
+            <div class="task-headline">Website redesign</div>
+            <div class="task-txt">Modify the contents of the main website...</div>
+            <div class="task-footer">
+                <div class="task-users">
+                    <div class="user-icon">SM</div>
+                    <div class="user-icon">MV</div>
+                    <div class="user-icon">EF</div>
+                </div>
+                <div class="task-priority"><img src="./assets/img/urgent_col.svg"></div>
+            </div>
+        </div>
     </div>
 
     <div class="board-column">
@@ -55,4 +75,3 @@
     </div>
 
 </div>
-

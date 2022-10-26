@@ -44,8 +44,8 @@ body {
 }
 
 .head-4 {
-    font-size: 1.15rem;
-    font-weight: 700;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 .bg-transparent {
@@ -54,4 +54,9 @@ body {
         background-color: var(--background-light);
         border-radius: 6px;
     }
+}
+
+.active {
+    background-color: var(--menu-hover-bgr);
+    color: var(--font-white);
 }
