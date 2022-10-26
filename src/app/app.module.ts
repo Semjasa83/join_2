@@ -21,6 +21,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { LoginComponent } from './login/login.component';
 import { BoardComponent } from './board/board.component';
 import { MainComponent } from './main/main.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -49,6 +50,7 @@ import { MainComponent } from './main/main.component';
     MatNativeDateModule,
     MatButtonModule,
     MatCheckboxModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
