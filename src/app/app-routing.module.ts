@@ -6,11 +6,12 @@ import { BoardComponent } from './board/board.component';
 import { ContactsComponent } from './contacts/contacts.component';
 
 const routes: Routes = [
+  { path: '',   redirectTo: '', pathMatch: 'full' },
   { path: 'summary', component: SummaryComponent },
   { path: 'addtask', component:  AddtaskComponent },
   { path: 'board', component:  BoardComponent },
   { path: 'contacts', component: ContactsComponent},
-  { path: '',   redirectTo: '', pathMatch: 'full' },
+
 ];
 
 @NgModule({
