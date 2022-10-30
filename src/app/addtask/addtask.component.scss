@@ -87,7 +87,7 @@ mat-label {
 
     button {
         font-size: 1rem;
-        height: 3rem;
+        height: 2.5rem;
     }
     .addtask-btn-clear {
         &:hover {
@@ -102,4 +102,18 @@ mat-label {
             background-color: var(--font-blue);
         }
     }
+}
+
+:host ::ng-deep .mat-form-field-outline {
+    background-color: var(--background-light);
+    border-radius: 5px;
+}
+
+:host ::ng-deep .mat-stroked-button {
+    background-color: var(--background-light);
+    border-radius: 5px;
+}
+
+:host ::ng-deep .mat-checkbox {
+
 }

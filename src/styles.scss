@@ -29,17 +29,17 @@ body {
 }
 
 .head-1 {
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 500;
 }
 
 .head-2 {
-    font-size: 2.25rem;
+    font-size: 2.75rem;
     font-weight: 700;
 }
 
 .head-3 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
 }
 
@@ -48,13 +48,13 @@ body {
     font-weight: 500;
 }
 
-.bg-transparent {
-    .mat-form-field-appearance-outline .mat-form-field-outline-thick {
-        opacity: 0.4;
-        background-color: var(--background-light);
-        border-radius: 6px;
-    }
-}
+// .bg-transparent {
+//     .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+//         opacity: 0.4;
+//         background-color: var(--background-light);
+//         border-radius: 6px;
+//     }
+// }
 
 .active {
     background-color: var(--menu-hover-bgr);

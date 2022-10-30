@@ -1,0 +1,12 @@
+:host {
+    display: flex;
+    height: 100%;
+}
+
+app-contacts-list {
+    width: 40%;
+}
+
+app-contacts-detail {
+    width: 60%;
+}

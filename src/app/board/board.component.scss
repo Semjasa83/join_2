@@ -33,11 +33,10 @@
         background-color: var(--primary-color);
         color: var(--font-white);
         display: flex;
-        height: 2.5rem;
         font-weight: 800;
         font-size: 1rem;
         margin-bottom: 1.25rem;
-        border-radius: 0.75rem;
+        border-radius: 5px;
         
         &:hover {
             background-color: var(--font-blue);
@@ -46,23 +45,11 @@
 }
 
 /**** for Find Task Field ****/
-// :host ::ng-deep .mat-form-field-flex {
-//     border-radius: 0.75rem;
-//     border: 1px solid var(--form-label) ;
-// }
+:host ::ng-deep .mat-form-field-outline {
+    background-color: var(--background-light);
+    border-radius: 5px;
+}
 
-// :host ::ng-deep .mat-form-field-flex {
-//     background-color: var(--background-light);
-// }
-
-// :host ::ng-deep .mat-form-field-suffix {
-//     padding: 0.25rem 0 0.25rem 0.5rem ;
-//     border-left: 1px solid var(--shadow-color);    
-// }
-
-// :host ::ng-deep .mat-form-field-underline {
-//     width: 0;
-// }
 
 /*****************************/
 

@@ -1,0 +1,20 @@
+.contacts-detail {
+    height: 100%;
+    margin-left: 2rem;
+    margin-top: 4rem;
+}
+
+.headline-content {
+    align-items: center;
+    display: flex;
+    padding-bottom: 2rem;
+
+    .headline-1 {
+        margin-right: 2rem;
+    }
+    .headline-txt {
+        border-left: 2px solid var(--font-blue);
+        font-size: 1.25rem;
+        padding: 0.5rem 1rem;
+    }
+}

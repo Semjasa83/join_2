@@ -23,7 +23,10 @@ import { BoardComponent } from './board/board.component';
 import { MainComponent } from './main/main.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ContactsComponent } from './contacts/contacts.component';
-
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
+import { ContactsListComponent } from './contacts-list/contacts-list.component';
+import { ContactsDetailComponent } from './contacts-detail/contacts-detail.component';
 
 
 @NgModule({
@@ -37,6 +40,8 @@ import { ContactsComponent } from './contacts/contacts.component';
     BoardComponent,
     MainComponent,
     ContactsComponent,
+    ContactsListComponent,
+    ContactsDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +57,9 @@ import { ContactsComponent } from './contacts/contacts.component';
     MatNativeDateModule,
     MatButtonModule,
     MatCheckboxModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

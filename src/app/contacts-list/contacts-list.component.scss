@@ -1,0 +1,26 @@
+mat-list {
+    padding-right: 1rem;
+}
+
+:host ::ng-deep .mat-line {
+    font-size: 1rem;
+}
+
+.contacts-list {
+    padding-left: 2rem;
+    background-color: var(--background-light);
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.contact-shortcut {
+    background-color: red;
+    padding: 0.5rem;
+    border-radius: 100%;
+    color: white;
+    margin-right: 1rem;
+}
+
+.contact-item {
+    display: flex;
+}
