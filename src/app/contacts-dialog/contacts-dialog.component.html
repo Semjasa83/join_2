@@ -1,16 +1,26 @@
 <div class="contact-dialog-cmpl">
     <div class="contact-dialog-left">
-        <img>
-        <span>Add contact</span>
-        <span>Tasks are better with a team!</span>
-        <hr>
+        <img class="logo" src="./assets/img/join.png">
+        <span class="head-2">Add contact</span>
+        <span class="contact-head-content">Tasks are better with a team!</span>
+        <img class="design-line" src="./assets/img/deko-line.svg">
     </div>
 
     <div class="contact-dialog-right">
-        <img>
+        <div class="close-dialog"><mat-icon>close</mat-icon></div>
+        <div class="contact-initials">
+            <img class="initials-placeholder" src="./assets/img/initials-ph.svg">
+            <span></span>
+        </div>
         <div class="dialog-input-area">
             <mat-form-field appearance="outline">
-                <mat-label>Name</mat-label>
+                <mat-label>Firstname</mat-label>
+                <input type="text" matInput placeholder="">
+                <mat-icon matSuffix>person</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Lastname</mat-label>
                 <input type="text" matInput placeholder="">
                 <mat-icon matSuffix>person</mat-icon>
             </mat-form-field>
@@ -27,9 +37,9 @@
                 <mat-icon matSuffix>call</mat-icon>
             </mat-form-field>
 
-            <div>
-                <button mat-stroked-button class="">Cancel <mat-icon fontIcon="close"></mat-icon></button>
-                <button mat-stroked-button class="">Create contact <mat-icon fontIcon="check"></mat-icon></button>
+            <div class="contact-dialog-btns">
+                <button mat-stroked-button class="cancel-btn">Cancel <mat-icon fontIcon="close"></mat-icon></button>
+                <button mat-stroked-button class="create-btn">Create contact <mat-icon fontIcon="check"></mat-icon></button>
             </div>
         </div>
     </div>
