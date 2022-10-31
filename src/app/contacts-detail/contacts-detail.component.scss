@@ -1,7 +1,6 @@
 .contacts-detail {
     height: 100%;
-    margin-left: 2rem;
-    margin-top: 4rem;
+    position: relative;
 }
 
 .headline-content {
@@ -17,4 +16,10 @@
         font-size: 1.25rem;
         padding: 0.5rem 1rem;
     }
+}
+
+.contact-add-btn {
+    position: absolute;
+    bottom: 7rem;
+    right: 2rem;
 }

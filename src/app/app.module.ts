@@ -27,6 +27,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { ContactsListComponent } from './contacts-list/contacts-list.component';
 import { ContactsDetailComponent } from './contacts-detail/contacts-detail.component';
+import { AddtaskouterComponent } from './addtaskouter/addtaskouter.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { ContactsDetailComponent } from './contacts-detail/contacts-detail.compo
     ContactsComponent,
     ContactsListComponent,
     ContactsDetailComponent,
+    AddtaskouterComponent,
   ],
   imports: [
     BrowserModule,

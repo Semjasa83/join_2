@@ -6,6 +6,8 @@ import { BoardComponent } from './board/board.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { MainComponent } from './main/main.component';
 import { LoginComponent } from './login/login.component';
+import { AddtaskouterComponent } from './addtaskouter/addtaskouter.component';
+
 
 const routes: Routes = [
   { path: '',   redirectTo: 'login', pathMatch: 'full' },
@@ -13,10 +15,11 @@ const routes: Routes = [
   {
     path: 'main', component: MainComponent,
     children: [
+      { path: '', redirectTo: 'summary', pathMatch: 'prefix' },
       { path: 'summary', component: SummaryComponent },
-      { path: 'addtask', component:  AddtaskComponent },
       { path: 'board', component:  BoardComponent },
-      { path: 'contacts', component: ContactsComponent}
+      { path: 'contacts', component: ContactsComponent},
+      { path: 'addtaskout', component: AddtaskouterComponent}
     ]
   },
   { path: '**', redirectTo: 'login' }

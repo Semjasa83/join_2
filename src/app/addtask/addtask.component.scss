@@ -1,12 +1,11 @@
-:host {
-    margin: 4rem;
+
+.head-2 {
+    padding-bottom: 3rem;
 }
 
 .addtask-form {
     display: flex;
     flex-direction: column;
-    margin-top: 3rem;
-    width: 100%;
 }
 
 .addtask-content {
@@ -112,8 +111,4 @@ mat-label {
 :host ::ng-deep .mat-stroked-button {
     background-color: var(--background-light);
     border-radius: 5px;
-}
-
-:host ::ng-deep .mat-checkbox {
-
 }

@@ -4,60 +4,71 @@
 </div>
 <div class="summary-content">
     <div class="summary-cards">
-
         <div class="counter-cards">
             <div class="counter-card">
-                <span class="task-count head-1">5</span>
-                <span class="counter-info">Tasks in Board</span>
+                <mat-card class="counter-card-spacer">
+                    <span class="task-counter head-2">5</span>
+                    <span class="task-txt">Tasks in Board</span>
+                </mat-card>
             </div>
             <div class="counter-card">
-                <span class="task-count head-1">2</span>
-                <span class="counter-info">Tasks in Progress</span>
+                <mat-card class="counter-card-spacer">
+                    <span class="task-counter head-2">2</span>
+                    <span class="task-txt">Tasks in Progress</span>
+                </mat-card>
             </div>
             <div class="counter-card">
-                <span class="task-count head-1">2</span>
-                <span class="counter-info">Awaiting Feedback</span>
+                <mat-card class="counter-card-spacer">
+                    <span class="task-counter head-2">2</span>
+                    <span class="task-txt">Awaiting Feedback</span>
+                </mat-card>
             </div>
+
+        </div>
+        <div class="card-urgent">
+            <mat-card class="urgent-card-spacer">
+                <div class="urgency-counter">
+                    <div class="urgency-icon">
+                        <img src="./assets/img/urgent.svg" class="icon">
+                    </div>
+                    <div class="urgency-status">
+                        <span class="urgency-count head-2">1</span>
+                        <span class="urgency-description">Urgent</span>
+                    </div>
+                </div>
+                <div class="urgency-info">
+                    <span class="urgency-date">October 16, 2022</span>
+                    <span class="urgency-date-txt">Upcoming Deadline</span>
+                </div>
+            </mat-card>
         </div>
 
-        <div class="urgency-task">
-            <div class="urgency-counter">
-                <div class="urgency-icon">
-                    <img src="./assets/img/urgent.svg" class="icon">
-                </div>
-                <div class="urgency-status">
-                    <span class="urgency-count">1</span>
-                    <span class="urgency-description">Urgent</span>
-                </div>
+        <div class="status-cards">
+            <div class="status-card">
+                <mat-card class="status-card-spacer">
+                    <div class="status-icon">
+                        <mat-icon fontIcon="edit"></mat-icon>
+                    </div>
+                    <div class="status-count-cmpl">
+                        <span class="status-count head-2">1</span>
+                        <span>To-do</span>
+                    </div>
+                </mat-card>
             </div>
-            <div class="urgency-info">
-                <span class="urgency-date">October 16, 2022</span>
-                <span class="urgency-date-txt">Upcoming Deadline</span>
-            </div>
-        </div>
-
-        <div class="task-status">
-            <div class="status-content">
-                <div class="status-icon">
-                    <mat-icon fontIcon="edit"></mat-icon>
-                </div>
-                <div class="status-count-cmpl">
-                    <span class="status-count head-3">1</span>
-                    <span>To-do</span>
-                </div>
-            </div>
-            <div class="status-content">
-                <div class="status-icon">
-                    <mat-icon fontIcon="done"></mat-icon>
-                </div>
-                <div class="status-count-cmpl">
-                    <span class="status-count head-3">1</span>
-                    <span>Done</span>
-                </div>
+            <div class="status-card">
+                <mat-card class="status-card-spacer">
+                    <div class="status-icon">
+                        <mat-icon fontIcon="done"></mat-icon>
+                    </div>
+                    <div class="status-count-cmpl">
+                        <span class="status-count head-2">1</span>
+                        <span>Done</span>
+                    </div>
+                </mat-card>
             </div>
         </div>
-
     </div>
+
     <div class="summary-greet">
         <span>Good morning,</span>
         <span class="greet-user">Max Mustermann</span>
