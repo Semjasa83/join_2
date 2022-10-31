@@ -28,6 +28,8 @@ import { MatListModule } from '@angular/material/list';
 import { ContactsListComponent } from './contacts-list/contacts-list.component';
 import { ContactsDetailComponent } from './contacts-detail/contacts-detail.component';
 import { AddtaskouterComponent } from './addtaskouter/addtaskouter.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ContactsDialogComponent } from './contacts-dialog/contacts-dialog.component';
 
 
 @NgModule({
@@ -44,6 +46,7 @@ import { AddtaskouterComponent } from './addtaskouter/addtaskouter.component';
     ContactsListComponent,
     ContactsDetailComponent,
     AddtaskouterComponent,
+    ContactsDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,7 +64,8 @@ import { AddtaskouterComponent } from './addtaskouter/addtaskouter.component';
     MatCheckboxModule,
     HttpClientModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

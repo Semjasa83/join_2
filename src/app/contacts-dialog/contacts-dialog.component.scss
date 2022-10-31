@@ -1,0 +1,16 @@
+.contact-dialog-cmpl {
+    display: flex;
+}
+
+.contact-dialog-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-dialog-right {
+    display: flex;
+    .dialog-input-area {
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ContactsDialogComponent } from '../contacts-dialog/contacts-dialog.component';
+
+
 
 @Component({
   selector: 'app-contacts-detail',
@@ -7,9 +11,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactsDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { 
+
+  }
 
   ngOnInit(): void {
   }
 
+  openDialog() {
+    this.dialog.open(ContactsDialogComponent);
+  }
 }
