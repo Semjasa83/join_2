@@ -30,6 +30,12 @@ import { ContactsDetailComponent } from './contacts-detail/contacts-detail.compo
 import { AddtaskouterComponent } from './addtaskouter/addtaskouter.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ContactsDialogComponent } from './contacts-dialog/contacts-dialog.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAnalytics,getAnalytics,ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { provideAuth,getAuth } from '@angular/fire/auth';
 
 
 @NgModule({
@@ -65,9 +71,16 @@ import { ContactsDialogComponent } from './contacts-dialog/contacts-dialog.compo
     HttpClientModule,
     MatCardModule,
     MatListModule,
-    MatDialogModule
+    MatDialogModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAnalytics(() => getAnalytics()),
+    provideDatabase(() => getDatabase()),
+    provideFirestore(() => getFirestore()),
+    provideAuth(() => getAuth())
   ],
-  providers: [],
+  providers: [
+    ScreenTrackingService,UserTrackingService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

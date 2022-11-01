@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "join-e8a20": {
+      "hosting": {
+        "join_2": [
+          "join-e8a20"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "join-e8a20"
+  }
+}

@@ -8,9 +8,14 @@
 }
 
 .close-dialog {
+    cursor: pointer;
     position: absolute;
     right: 3rem;
     top: 2rem;
+    
+    &:hover {
+        color: var(--font-blue);
+    }
 }
 
 .contact-dialog-left {
@@ -25,8 +30,8 @@
         width: 3.5rem;
     }
     .head-2 {
-        padding-top: 2rem;
         font-weight: 500;
+        padding-top: 2rem;
     }
     .contact-head-content {
         font-size: 1.15rem;
@@ -44,8 +49,8 @@
     align-items: center;
     display: flex;
     justify-content: center;
-    position: relative;
     padding: 3rem 3rem 3rem 0;
+    position: relative;
     
     .contact-initials {
         align-items: center;
@@ -65,6 +70,7 @@
     }
     .contact-dialog-btns {
         display: flex;
+        
         .cancel-btn {
             margin-right: 1rem;
             
