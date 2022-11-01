@@ -3,8 +3,7 @@ export class Contact {
     lastName: string;
     email: string;
     phone: number;
-    userName: string;
-    shortName: string;
+    shortTag: string;
     id: string;
 
     constructor (obj?: any) {
@@ -12,8 +11,7 @@ export class Contact {
         this.lastName = obj ? obj.lastName : '';
         this.email = obj ? obj.email : '';
         this.phone = obj ? obj.phone : '';
-        this.userName = obj ? obj.userName : '';
-        this.shortName = obj ? obj.shortName : '';
+        this.shortTag = obj ? obj.shortTag : '';
         this.id = obj ? obj.id : '';
     }
 
@@ -23,8 +21,7 @@ export class Contact {
             lastName: this.lastName,
             email: this.email,
             phone: this.phone,
-            userName: this.userName,
-            shortName: this.shortName,
+            shortTag: this.shortTag,
             id: this.id
         }
     }
