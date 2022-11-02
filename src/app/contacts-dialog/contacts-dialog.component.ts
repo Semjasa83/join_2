@@ -32,8 +32,7 @@ export class ContactsDialogComponent implements OnInit {
     let firstLetter = this.contact.firstName.charAt(0).toUpperCase();
     let secondLetter = this.contact.lastName.charAt(0).toUpperCase();
     let shortTag = firstLetter + secondLetter;
-    console.log(shortTag);
-    return shortTag;
-    //wie ins JSON vor addDoc?
+    console.log(shortTag); //_____CONSOLE
+    return shortTag; 
   }
 }
