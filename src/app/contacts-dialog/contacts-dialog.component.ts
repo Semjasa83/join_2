@@ -11,6 +11,7 @@ import { Firestore, collectionData } from '@angular/fire/firestore';
 export class ContactsDialogComponent implements OnInit {
 
   contact: Contact = new Contact();
+  shortTag: string = '';
 
   constructor(private firestore: Firestore) { }
 
@@ -18,8 +19,17 @@ export class ContactsDialogComponent implements OnInit {
   }
 
   async saveContact() {
+    this.getContactTag();
     console.log('contact', this.contact);
     const coll = collection(this.firestore, "contacts");
     await addDoc (coll, this.contact.toJSON());
+  }
+
+  getContactTag() {
+    let firstLetter = this.contact.firstName.charAt(0).toUpperCase();
+    let secondLetter = this.contact.lastName.charAt(0).toUpperCase();
+    let shortTag = firstLetter + secondLetter;
+    console.log(shortTag);
+    this.contact.shortTag;
   }
 }
