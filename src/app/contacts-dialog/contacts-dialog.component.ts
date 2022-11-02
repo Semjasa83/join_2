@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Contact } from 'src/models/contact.class';
-// import { addDoc } from "firebase/firestore"; 
-// import { Firestore, collectionData, collection } from '@angular/fire/firestore';
+import { addDoc } from "firebase/firestore"; 
+import { Firestore, collectionData, collection } from '@angular/fire/firestore';
 
 
 @Component({
@@ -15,27 +14,17 @@ export class ContactsDialogComponent implements OnInit {
   contact: Contact = new Contact();
   shortTag: string = '';
 
-  constructor( private firestore: AngularFirestore) { }
+  constructor( private firestore: Firestore) { }
 
   ngOnInit(): void {
   }
 
   async saveContact() {
-    await this.firestore
-    .collection('contacts')
-    .add(this.contact)
-    .then((result: any) => {
-      console.log('contact finished', result)
-    });
-  };
-
-
-  // async saveContact() {
-  //   this.getContactTag();
-  //   console.log('contact', this.contact);
-  //   const coll = collection(this.firestore, "contacts");
-  //   await addDoc (coll, this.contact.toJSON());
-  // }
+    this.getContactTag();
+    console.log('contact', this.contact);
+    const coll = collection(this.firestore, "contacts");
+    await addDoc (coll, this.contact.toJSON());
+  }
 
 
 
