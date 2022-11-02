@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { collectionData, Firestore } from '@angular/fire/firestore';
-import { collection } from '@firebase/firestore';
+import { collectionData, Firestore, collection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Contact } from 'src/models/contact.class';
 
@@ -16,19 +15,16 @@ export class ContactsListComponent implements OnInit {
   allContacts: any = [];
 
   constructor(private firestore: Firestore) {
-    
+
     const coll = collection(firestore, 'contacts');
-    this.allContacts$ = collectionData(coll, {idField: "contactId"}); // QA
+    this.allContacts$ = collectionData(coll, {idField: "id"}); // { - direkt zugriff in der Sammlung}
 
     this.allContacts$.subscribe((changes: any) => {
       console.log('received changes;', changes); //_____CONSOLE
-      this.allContacts = changes;
+      this.allContacts = changes.map((contact : any) => new Contact(contact));
       console.log('allContacts: ', this.allContacts ); //ID wie ins JSON übertragen
-    })
+    });
   }
-
-
-
 
   ngOnInit(): void {
   }
