@@ -12,18 +12,18 @@ import { Contact } from 'src/models/contact.class';
 export class ContactsListComponent implements OnInit {
 
   contact = new Contact();
-  allContacts$: Observable<any>;
+  allContacts$: Observable<any>; //QA
   allContacts: any = [];
 
   constructor(private firestore: Firestore) {
     
     const coll = collection(firestore, 'contacts');
-    this.allContacts$ = collectionData(coll, {idField: "contactId"});
+    this.allContacts$ = collectionData(coll, {idField: "contactId"}); // QA
 
     this.allContacts$.subscribe((changes: any) => {
-      console.log('received changes;', changes);
+      console.log('received changes;', changes); //_____CONSOLE
       this.allContacts = changes;
-      console.log('allContacts: ', this.allContacts );
+      console.log('allContacts: ', this.allContacts ); //ID wie ins JSON übertragen
     })
   }
 

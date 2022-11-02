@@ -21,7 +21,7 @@ export class ContactsDialogComponent implements OnInit {
 
   async saveContact() {
     this.getContactTag();
-    console.log('contact', this.contact);
+    console.log('contact', this.contact); //_____CONSOLE
     const coll = collection(this.firestore, "contacts");
     await addDoc (coll, this.contact.toJSON());
   }
@@ -33,6 +33,6 @@ export class ContactsDialogComponent implements OnInit {
     let secondLetter = this.contact.lastName.charAt(0).toUpperCase();
     let shortTag = firstLetter + secondLetter;
     console.log(shortTag);
-    this.contact.shortTag;
+    //wie ins JSON vor addDoc?
   }
 }
