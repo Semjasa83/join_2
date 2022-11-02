@@ -15,7 +15,7 @@ export class Contact {
         this.id = obj ? obj.id : '';
     }
 
-    toJSON() {
+    public toJSON() {
         return {
             firstName: this.firstName,
             lastName: this.lastName,
