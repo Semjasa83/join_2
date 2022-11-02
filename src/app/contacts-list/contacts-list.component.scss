@@ -28,3 +28,8 @@ mat-list {
 .contact-item {
     display: flex;
 }
+
+.contact-email {
+    color: var(--font-blue);
+    font-size: 0.8rem !important;
+}

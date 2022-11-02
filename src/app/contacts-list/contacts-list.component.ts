@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Firestore } from '@angular/fire/firestore';
+import { doc, getDoc } from "firebase/firestore";
 
 
 
@@ -9,15 +11,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactsListComponent implements OnInit {
 
-  allContacts: any = [];
-
-
-  constructor() { }
+  constructor(private firestore: Firestore) { }
 
   ngOnInit(): void {
-
+    // this.getContacts();
   }
 
+  // async getContacts() {
 
-
+  //   const docRef = doc(this.firestore, 'contacts', '');
+  //   const docSnap = await getDoc(docRef);
+    
+  //   if (docSnap.exists()) {
+  //     console.log("Document data:", docSnap.data());
+  //   } else {
+  //     // doc.data() will be undefined in this case
+  //     console.log("No such document!");
+  //   }
+  // }
 }
