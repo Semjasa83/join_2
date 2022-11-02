@@ -31,11 +31,12 @@ import { AddtaskouterComponent } from './addtaskouter/addtaskouter.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ContactsDialogComponent } from './contacts-dialog/contacts-dialog.component';
 import { FormsModule } from '@angular/forms';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+// import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire/compat';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     MatListModule,
     MatDialogModule,
     FormsModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    // provideFirebaseApp(() => initializeApp(environment.firebase)),
+    AngularFireModule.initializeApp(environment.firebase),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),
