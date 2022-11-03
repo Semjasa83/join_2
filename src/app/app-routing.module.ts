@@ -7,6 +7,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { MainComponent } from './main/main.component';
 import { LoginComponent } from './login/login.component';
 import { AddtaskouterComponent } from './addtaskouter/addtaskouter.component';
+import { ContactsDetailPopupComponent } from './contacts-detail-popup/contacts-detail-popup.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,11 @@ const routes: Routes = [
       { path: '', redirectTo: 'summary', pathMatch: 'prefix' },
       { path: 'summary', component: SummaryComponent },
       { path: 'board', component:  BoardComponent },
-      { path: 'contacts', component: ContactsComponent},
+      { path: 'contacts', component: ContactsComponent,
+        children: [
+          { path: '',   redirectTo: 'contacts', pathMatch: 'full' },
+          { path: 'contactdetail', component: ContactsDetailPopupComponent}
+        ]},
       { path: 'addtaskout', component: AddtaskouterComponent}
     ]
   },

@@ -53,3 +53,8 @@ body {
     background-color: var(--menu-hover-bgr);
     color: var(--font-white);
 }
+
+.active-contact {
+    background-color: var(--primary-color);
+    color: var(--font-white) !important;
+}
