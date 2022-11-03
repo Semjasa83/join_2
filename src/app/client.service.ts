@@ -30,21 +30,21 @@ export class ClientService {
 
   private contactsCollection: CollectionReference<DocumentData>;
 
-    contact = new Contact();
-    allContacts$: Observable<any>; //QA
-    allContacts: any = [];
+  contact = new Contact();
+  allContacts$: Observable<any>; //QA
+  allContacts: any = [];
+  
 
   constructor(public readonly firestore: Firestore) {
     // this.sortedCollection = query(this.tasksCollection, orderBy('dueDate.timestamp', 'asc'));
     this.contactsCollection = collection(firestore, 'contacts');
 
-    //const coll = collection(firestore, 'contacts');
-    this.allContacts$ = collectionData(this.contactsCollection, {idField: "id"}); // { - direkt zugriff in der Sammlung}
 
+    //push all contacts into JSON
+    this.allContacts$ = collectionData(this.contactsCollection, { idField: "id" }); // { - direkt zugriff in der Sammlung}
     this.allContacts$.subscribe((changes: any) => {
-      //console.log('received changes;', changes); //_____CONSOLE
-      this.allContacts = changes.map((contact : any) => new Contact(contact));
-      //console.log('allContacts: ', this.allContacts ); //ID wie ins JSON übertragen
+      this.allContacts = changes.map((contact: any) => new Contact(contact));
+      //console.log(changes);
     });
   }
 

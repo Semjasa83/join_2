@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Contact } from 'src/models/contact.class';
+import { ClientService } from '../client.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-contacts-detail-popup',
@@ -7,10 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactsDetailPopupComponent implements OnInit {
 
-  constructor() { }
+  oneContact: any;
 
-  ngOnInit(): void {}
+  constructor(public client: ClientService, private activeroute: ActivatedRoute) {
+  }
 
+  ngOnInit(): void {
+  }
 
 
 }

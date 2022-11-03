@@ -22,7 +22,7 @@ const routes: Routes = [
       { path: 'contacts', component: ContactsComponent,
         children: [
           { path: '',   redirectTo: 'contacts', pathMatch: 'full' },
-          { path: 'contactdetail', component: ContactsDetailPopupComponent}
+          { path: 'contactdetail/:id', component: ContactsDetailPopupComponent}
         ]},
       { path: 'addtaskout', component: AddtaskouterComponent}
     ]
