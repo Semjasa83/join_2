@@ -30,18 +30,31 @@ export class ClientService {
 
   private contactsCollection: CollectionReference<DocumentData>;
 
-  constructor(private readonly firestore: Firestore) {
-    this.contactsCollection = collection(this.firestore, 'contacts');
+  constructor(public readonly firestore: Firestore) {
+    // this.sortedCollection = query(this.tasksCollection, orderBy('dueDate.timestamp', 'asc'));
+    this.contactsCollection = collection(firestore, 'contacts');
   }
 
   getAllContacts() {
-    return collectionData(this.contactsCollection, {
-      idField: 'id',
-    }) as Observable<Contact[]>;
+    return collectionData(this.contactsCollection, { idField: 'id' }) as Observable<any>;
   }
 
   getContact(id: string) {
-    const contactRef = doc(this.firestore, `contacts/${id}`);
-    return docData(contactRef, { idField: 'id' });
+    const taskRef = doc(this.firestore, `contacts/${id}`);
+    return docData(taskRef, { idField: 'id' });
+  }
+
+  createContact(contact: any) {
+    return addDoc(this.contactsCollection, contact);
+  }
+
+  updateContact(contact: any) {
+    const taskRef = doc(this.firestore, `contacts/${contact.id}`);
+    return updateDoc(taskRef, { ...contact });
+  }
+
+  deleteContact(id: string) {
+    const taskRef = doc(this.firestore, `contacts/${id}`);
+    return deleteDoc(taskRef);
   }
 }

@@ -1,7 +1,12 @@
+:host {
+    min-width: 50%;
+}
+
 .contacts-detail {
     height: 100%;
+    width: 100%;
     position: relative;
-    padding-left: 1rem;
+    margin-left: 1rem;
 }
 
 .headline-content {
@@ -31,4 +36,9 @@
     &:hover {
         background-color: var(--font-blue);
     }
+}
+
+.contact-detail {
+    width: 100%;
+    margin-top: 1rem;
 }

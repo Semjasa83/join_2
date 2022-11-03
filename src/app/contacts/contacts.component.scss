@@ -1,13 +1,6 @@
-:host {
+.contacts-cmpl {
     display: flex;
     height: 100%;
-}
-
-app-contacts-list {
-    width: 40%;
-    height: 100%;
-}
-
-app-contacts-detail {
-    width: 60%;
+    margin: 0;
+    padding: 0;
 }

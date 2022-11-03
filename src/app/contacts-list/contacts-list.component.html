@@ -1,13 +1,13 @@
 
-    <div class="contacts-list">
+    <div class="contacts-list" >
         <mat-list>
             <div mat-subheader>A</div>
             <mat-divider></mat-divider>
-            <mat-list-item class="contact-item">
-                <div class="contact-shortcut">AB</div>
+            <mat-list-item class="contact-item" *ngFor="let contact of allContacts" routerLinkActive="active">
+                <div class="contact-shortcut">{{contact.shortTag}}</div>
                 <div>
-                    <div mat-line><span class="contact-fn">Max </span><span class="contact-ln">Mustermann</span></div>
-                    <div mat-line class="contact-email">Mustermann@Max.de</div>
+                    <div mat-line><span class="contact-fn">{{contact.firstName}} </span><span class="contact-ln">{{contact.lastName}}</span></div>
+                    <div mat-line class="contact-email">{{contact.email}}</div>
                 </div>
 
             </mat-list-item>
