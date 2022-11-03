@@ -26,8 +26,6 @@ export class ContactsDialogComponent implements OnInit {
     await addDoc (coll, this.contact.toJSON());
   }
 
-
-
   getContactTag() {
     let firstLetter = this.contact.firstName.charAt(0).toUpperCase();
     let secondLetter = this.contact.lastName.charAt(0).toUpperCase();

@@ -12,20 +12,20 @@ import { ClientService } from '../client.service';
 })
 export class ContactsListComponent implements OnInit {
 
-  contact = new Contact();
-  allContacts$: Observable<any>; //QA
-  allContacts: any = [];
+  // contact = new Contact();
+  // allContacts$: Observable<any>; //QA
+  // allContacts: any = [];
 
-  constructor(private firestore: Firestore, private client: ClientService) {
+    constructor(private firestore: Firestore, private client: ClientService) {
 
-    const coll = collection(firestore, 'contacts');
-    this.allContacts$ = collectionData(coll, {idField: "id"}); // { - direkt zugriff in der Sammlung}
+  //   const coll = collection(firestore, 'contacts');
+  //   this.allContacts$ = collectionData(coll, {idField: "id"}); // { - direkt zugriff in der Sammlung}
 
-    this.allContacts$.subscribe((changes: any) => {
-      //console.log('received changes;', changes); //_____CONSOLE
-      this.allContacts = changes.map((contact : any) => new Contact(contact));
-      //console.log('allContacts: ', this.allContacts ); //ID wie ins JSON übertragen
-    });
+  //   this.allContacts$.subscribe((changes: any) => {
+  //     //console.log('received changes;', changes); //_____CONSOLE
+  //     this.allContacts = changes.map((contact : any) => new Contact(contact));
+  //     //console.log('allContacts: ', this.allContacts ); //ID wie ins JSON übertragen
+  //   });
   }
 
   ngOnInit(): void {
