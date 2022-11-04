@@ -44,7 +44,7 @@ export class ClientService {
     this.allContacts$ = collectionData(this.contactsCollection, { idField: "id" }); // { - direkt zugriff in der Sammlung}
     this.allContacts$.subscribe((changes: any) => {
       this.allContacts = changes.map((contact: any) => new Contact(contact));
-      //console.log(changes);
+      console.log(changes);
     });
   }
 

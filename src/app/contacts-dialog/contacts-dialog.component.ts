@@ -22,7 +22,7 @@ export class ContactsDialogComponent implements OnInit {
 
   async saveContact() {
     this.contact.shortTag = this.getContactTag();
-    console.log('contact', this.contact); //_____CONSOLE
+    //console.log('contact', this.contact); //_____CONSOLE
     const coll = collection(this.firestore, "contacts");
     await addDoc (coll, this.contact.toJSON());
   }
