@@ -13,6 +13,7 @@ import { Firestore, collectionData, docData } from '@angular/fire/firestore';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Contact } from 'src/models/contact.class';
+import { Task } from 'src/models/task.class';
 
 interface Pokemon {
   height: number;
@@ -34,12 +35,15 @@ export class ClientService {
   allContacts$: Observable<any>; //QA
   allContacts: any = [];
   
+  // task = new Task();
+  // allTasks$: Observable<any>;
+  // allTasks: any = [];
 
   constructor(public readonly firestore: Firestore) {
 
     // this.sortedCollection = query(this.tasksCollection, orderBy('dueDate.timestamp', 'asc'));
 
-    
+    // this.tasksCollection = collection(firestore, 'tasks');
     this.contactsCollection = collection(firestore, 'contacts');
 
     //push all contacts into JSON
@@ -71,9 +75,16 @@ export class ClientService {
   }
 
   subscribeAllContacts() {
-    this.allContacts$.subscribe((changes: any) => {
-      this.allContacts = changes.map((contact: any) => new Contact(contact));
-      console.log(changes);
+    this.allContacts$.subscribe((contactChanges: any) => {
+      this.allContacts = contactChanges.map((contact: any) => new Contact(contact));
+      console.log(contactChanges);
     });
   }
+
+  // subcribeAllTasks() {
+  //   this.allTasks$.subscribe((tasksChanges: any) => {
+  //     this.allTasks = tasksChanges.map((task: any ) => new Task(task));
+  //     console.log(tasksChanges);
+  //   });
+  // }
 }
