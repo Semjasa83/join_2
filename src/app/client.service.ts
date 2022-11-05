@@ -28,7 +28,7 @@ interface Pokemon {
 })
 export class ClientService {
 
-  private contactsCollection: CollectionReference<DocumentData>;
+  public contactsCollection: CollectionReference<DocumentData>;
 
   contact = new Contact();
   allContacts$: Observable<any>; //QA
@@ -36,16 +36,15 @@ export class ClientService {
   
 
   constructor(public readonly firestore: Firestore) {
+
     // this.sortedCollection = query(this.tasksCollection, orderBy('dueDate.timestamp', 'asc'));
+
+    
     this.contactsCollection = collection(firestore, 'contacts');
 
-
     //push all contacts into JSON
-    this.allContacts$ = collectionData(this.contactsCollection, { idField: "id" }); // { - direkt zugriff in der Sammlung}
-    this.allContacts$.subscribe((changes: any) => {
-      this.allContacts = changes.map((contact: any) => new Contact(contact));
-      console.log(changes);
-    });
+    this.allContacts$ = this.getAllContacts(); // { - direkt zugriff in der Sammlung}
+    this.subscribeAllContacts();
   }
 
   getAllContacts() {
@@ -69,5 +68,12 @@ export class ClientService {
   deleteContact(id: string) {
     const taskRef = doc(this.firestore, `contacts/${id}`);
     return deleteDoc(taskRef);
+  }
+
+  subscribeAllContacts() {
+    this.allContacts$.subscribe((changes: any) => {
+      this.allContacts = changes.map((contact: any) => new Contact(contact));
+      console.log(changes);
+    });
   }
 }

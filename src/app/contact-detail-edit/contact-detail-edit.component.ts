@@ -3,15 +3,13 @@ import { MatDialog } from '@angular/material/dialog';
 import { ContactAddDialogComponent } from '../contact-add-dialog/contact-add-dialog.component';
 
 @Component({
-  selector: 'app-contacts-detail',
-  templateUrl: './contacts-detail.component.html',
-  styleUrls: ['./contacts-detail.component.scss']
+  selector: 'app-contact-detail-edit',
+  templateUrl: './contact-detail-edit.component.html',
+  styleUrls: ['./contact-detail-edit.component.scss']
 })
-export class ContactsDetailComponent implements OnInit {
+export class ContactDetailEditComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { 
-
-  }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }

@@ -4,13 +4,12 @@ import { addDoc } from "firebase/firestore";
 import { Firestore, collectionData, collection } from '@angular/fire/firestore';
 import { ClientService } from '../client.service';
 
-
 @Component({
-  selector: 'app-contacts-dialog',
-  templateUrl: './contacts-dialog.component.html',
-  styleUrls: ['./contacts-dialog.component.scss']
+  selector: 'app-contact-add-dialog',
+  templateUrl: './contact-add-dialog.component.html',
+  styleUrls: ['./contact-add-dialog.component.scss']
 })
-export class ContactsDialogComponent implements OnInit {
+export class ContactAddDialogComponent implements OnInit {
 
   contact: Contact = new Contact();
   shortTag: string = '';
@@ -22,7 +21,6 @@ export class ContactsDialogComponent implements OnInit {
 
   async saveContact() {
     this.contact.shortTag = this.getContactTag();
-    //console.log('contact', this.contact); //_____CONSOLE
     const coll = collection(this.firestore, "contacts");
     await addDoc (coll, this.contact.toJSON());
   }

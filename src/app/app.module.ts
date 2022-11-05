@@ -29,14 +29,15 @@ import { ContactsListComponent } from './contacts-list/contacts-list.component';
 import { ContactsDetailComponent } from './contacts-detail/contacts-detail.component';
 import { AddtaskouterComponent } from './addtaskouter/addtaskouter.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { ContactsDialogComponent } from './contacts-dialog/contacts-dialog.component';
 import { FormsModule } from '@angular/forms';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-import { ContactsDetailPopupComponent } from './contacts-detail-popup/contacts-detail-popup.component';
+import { ContactAddDialogComponent } from './contact-add-dialog/contact-add-dialog.component';
+import { ContactDetailEditComponent } from './contact-detail-edit/contact-detail-edit.component';
+
 
 @NgModule({
   declarations: [
@@ -52,8 +53,9 @@ import { ContactsDetailPopupComponent } from './contacts-detail-popup/contacts-d
     ContactsListComponent,
     ContactsDetailComponent,
     AddtaskouterComponent,
-    ContactsDialogComponent,
-    ContactsDetailPopupComponent,
+    ContactAddDialogComponent,
+    ContactDetailEditComponent,
+
   ],
   imports: [
     BrowserModule,

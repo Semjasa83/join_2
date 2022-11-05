@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { collectionData, Firestore, collection } from '@angular/fire/firestore';
 import { ClientService } from '../client.service';
 import { ActivatedRoute } from '@angular/router';
-import { Contact } from 'src/models/contact.class';
-import { doc, onSnapshot } from "firebase/firestore";
 
 @Component({
   selector: 'app-contacts-list',

@@ -4,17 +4,23 @@ mat-list {
 
 :host ::ng-deep .mat-line {
     font-size: 1rem;
+}
+
+.contact-list-container {
+    background-color: var(--background-light);
+    height: 100%;
     position: relative;
+    width: 18rem;
 }
 
 .contacts-list {
     background-color: var(--background-light);
+    bottom: 0;
     overflow-y: scroll;
     padding-left: 2rem;
-    top: 4rem;
-    width: 18rem;
-    height: 100%;
-    bottom: 0;
+    padding-top: 1rem;
+    position: absolute;
+    top: 0;
 }
 
 .contact-shortcut {
@@ -31,12 +37,13 @@ mat-list {
 }
 
 .contact-item {
-    display: flex;
     border-radius: 1rem;
+    display: flex;
     margin-top: 1rem;
+    
     &:hover {
-        cursor: pointer;
         background-color: var(--shadow-light-color);
+        cursor: pointer;
     }
 }
 

@@ -7,7 +7,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { MainComponent } from './main/main.component';
 import { LoginComponent } from './login/login.component';
 import { AddtaskouterComponent } from './addtaskouter/addtaskouter.component';
-import { ContactsDetailPopupComponent } from './contacts-detail-popup/contacts-detail-popup.component';
+import { ContactDetailEditComponent } from './contact-detail-edit/contact-detail-edit.component';
 
 
 const routes: Routes = [
@@ -22,7 +22,7 @@ const routes: Routes = [
       { path: 'contacts', component: ContactsComponent,
         children: [
           { path: '',   redirectTo: 'contacts', pathMatch: 'full' },
-          { path: 'contactdetail/:id', component: ContactsDetailPopupComponent}
+          { path: 'contactdetail/:id', component: ContactDetailEditComponent}
         ]},
       { path: 'addtaskout', component: AddtaskouterComponent}
     ]
