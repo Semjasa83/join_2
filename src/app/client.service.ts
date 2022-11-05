@@ -12,9 +12,6 @@ import { Firestore, collectionData, docData } from '@angular/fire/firestore';
 
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Contact } from 'src/models/contact.class';
-import { Task } from 'src/models/task.class';
-
 interface Pokemon {
   height: number;
   id: string;
@@ -29,62 +26,35 @@ interface Pokemon {
 })
 export class ClientService {
 
-  public contactsCollection: CollectionReference<DocumentData>;
+  private contactsCollection: CollectionReference<DocumentData>;
 
-  contact = new Contact();
-  allContacts$: Observable<any>; //QA
-  allContacts: any = [];
-  
-  // task = new Task();
-  // allTasks$: Observable<any>;
-  // allTasks: any = [];
 
   constructor(public readonly firestore: Firestore) {
 
-    // this.sortedCollection = query(this.tasksCollection, orderBy('dueDate.timestamp', 'asc'));
-
-    // this.tasksCollection = collection(firestore, 'tasks');
-    this.contactsCollection = collection(firestore, 'contacts');
-
-    //push all contacts into JSON
-    this.allContacts$ = this.getAllContacts(); // { - direkt zugriff in der Sammlung}
-    this.subscribeAllContacts();
+    this.contactsCollection = collection(this.firestore, 'contacts');
   }
 
   getAllContacts() {
-    return collectionData(this.contactsCollection, { idField: 'id' }) as Observable<any>;
+    return collectionData(this.contactsCollection, {idField: 'id',}) as Observable<Pokemon[]>;
   }
 
   getContact(id: string) {
-    const taskRef = doc(this.firestore, `contacts/${id}`);
-    return docData(taskRef, { idField: 'id' });
+    const contactsDocumentReference = doc(this.firestore, `contacts/${id}`);
+    return docData(contactsDocumentReference, { idField: 'id' });
   }
 
-  createContact(contact: any) {
-    return addDoc(this.contactsCollection, contact);
+  createContact(pokemon: Pokemon) {
+    return addDoc(this.contactsCollection, pokemon);
   }
 
-  updateContact(contact: any) {
-    const taskRef = doc(this.firestore, `contacts/${contact.id}`);
-    return updateDoc(taskRef, { ...contact });
+  updateContact(pokemon: Pokemon) {
+    const contactsDocumentReference = doc(this.firestore, `contacts/${pokemon.id}`);
+    return updateDoc(contactsDocumentReference, { ...pokemon });
   }
 
   deleteContact(id: string) {
-    const taskRef = doc(this.firestore, `contacts/${id}`);
-    return deleteDoc(taskRef);
+    const contactsDocumentReference = doc(this.firestore, `contacts/${id}`);
+    return deleteDoc(contactsDocumentReference);
   }
 
-  subscribeAllContacts() {
-    this.allContacts$.subscribe((contactChanges: any) => {
-      this.allContacts = contactChanges.map((contact: any) => new Contact(contact));
-      console.log(contactChanges);
-    });
-  }
-
-  // subcribeAllTasks() {
-  //   this.allTasks$.subscribe((tasksChanges: any) => {
-  //     this.allTasks = tasksChanges.map((task: any ) => new Task(task));
-  //     console.log(tasksChanges);
-  //   });
-  // }
 }

@@ -37,6 +37,7 @@ import { ContactAddDialogComponent } from './contact-add-dialog/contact-add-dial
 import { ContactDetailEditComponent } from './contact-detail-edit/contact-detail-edit.component';
 import { TaskAddDialogComponent } from './task-add-dialog/task-add-dialog.component';
 import { TaskAddRouterComponent } from './task-add-router/task-add-router.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -77,6 +78,7 @@ import { TaskAddRouterComponent } from './task-add-router/task-add-router.compon
     MatListModule,
     MatDialogModule,
     FormsModule,
+    ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),

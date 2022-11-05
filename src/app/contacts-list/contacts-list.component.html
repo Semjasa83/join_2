@@ -3,6 +3,26 @@
         <mat-list>
             <div mat-subheader>A</div>
             <mat-divider></mat-divider>
+            <mat-list-item class="contact-item"  routerLinkActive=""
+                routerLink="">
+                <div class="contact-shortcut"></div>
+                <div>
+                    <div mat-line><span class="contact-fn"></span><span
+                            class="contact-ln"></span></div>
+                    <div mat-line class="contact-email"></div>
+                </div>
+
+            </mat-list-item>
+        </mat-list>
+    </div>
+</div>
+
+<!--
+<div class="contact-list-container">
+    <div class="contacts-list">
+        <mat-list>
+            <div mat-subheader>A</div>
+            <mat-divider></mat-divider>
             <mat-list-item class="contact-item" *ngFor="let contact of client.allContacts" routerLinkActive=""
                 routerLink="contactdetail/{{contact.id}}">
                 <div class="contact-shortcut">{{contact.shortTag}}</div>
@@ -16,3 +36,4 @@
         </mat-list>
     </div>
 </div>
+-->

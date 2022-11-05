@@ -15,31 +15,31 @@
         <form class="dialog-input-area">
             <mat-form-field appearance="outline">
                 <mat-label>Firstname</mat-label>
-                <input type="text" matInput [(ngModel)]= "contact.firstName" placeholder="">
+                <input type="text" matInput  placeholder="">
                 <mat-icon matSuffix>person</mat-icon>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
                 <mat-label>Lastname</mat-label>
-                <input type="text" matInput [(ngModel)]= "contact.lastName" placeholder="">
+                <input type="text" matInput placeholder="">
                 <mat-icon matSuffix>person</mat-icon>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
                 <mat-label>Email</mat-label>
-                <input type="text" matInput [(ngModel)]= "contact.email" placeholder="">
+                <input type="text" matInput  placeholder="">
                 <mat-icon matSuffix>mail</mat-icon>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
                 <mat-label>Phone</mat-label>
-                <input type="text" matInput [(ngModel)]= "contact.phone" placeholder="">
+                <input type="text" matInput placeholder="">
                 <mat-icon matSuffix>call</mat-icon>
             </mat-form-field>
 
             <div class="contact-dialog-btns">
                 <button mat-stroked-button mat-dialog-close class="cancel-btn">Cancel <mat-icon fontIcon="close"></mat-icon></button>
-                <button mat-stroked-button mat-dialog-close (click)="saveContact()" class="create-btn">Create contact <mat-icon fontIcon="check"></mat-icon></button>
+                <button mat-stroked-button mat-dialog-close class="create-btn">Create contact <mat-icon fontIcon="check"></mat-icon></button>
             </div>
         </form>
     </div>
