@@ -12,7 +12,7 @@
             <img class="initials-placeholder" src="./assets/img/initials-ph.svg">
             <span></span>
         </div>
-        <div class="dialog-input-area">
+        <form class="dialog-input-area">
             <mat-form-field appearance="outline">
                 <mat-label>Firstname</mat-label>
                 <input type="text" matInput [(ngModel)]= "contact.firstName" placeholder="">
@@ -41,6 +41,6 @@
                 <button mat-stroked-button mat-dialog-close class="cancel-btn">Cancel <mat-icon fontIcon="close"></mat-icon></button>
                 <button mat-stroked-button mat-dialog-close (click)="saveContact()" class="create-btn">Create contact <mat-icon fontIcon="check"></mat-icon></button>
             </div>
-        </div>
+        </form>
     </div>
 </div>
