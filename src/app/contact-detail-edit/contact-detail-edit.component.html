@@ -1,10 +1,24 @@
-<div class="contacts-detail">
-    <div class="headline-content">
-        <span class="headline-1 head-2">Contacts</span>
-        <span class="headline-txt">Better with a team</span>
+
+<div class="contact-detail-popup">
+    <div class="detail-header">
+        <div class="detail-shorttag">AM</div>
+        <div class="detail-name-container">
+            <div class="detail-name">Anton Mayer</div>
+            <button class="detail-addtask"><mat-icon>add</mat-icon> Add Task</button>
+        </div>
     </div>
-    <div class="contact-detail">
-        <router-outlet></router-outlet>
+    <div class="detail-edit">
+        <span>Contact Information</span>
+        <button class="detail-edit-btn"><mat-icon>edit</mat-icon>Edit Contact</button>
     </div>
-    <button mat-stroked-button class="contact-add-btn" (click)="openDialog()">New Contact <mat-icon fontIcon="person_add"></mat-icon></button>
+    <div class="detail-info"> 
+        <div class="detail-email">
+            <span class="detail-info-head">Email</span>
+            <span class="detail-info-content">atom@text.de</span>
+        </div>
+        <div class="detail-phone">
+            <span class="detail-info-head">Phone</span>
+            <span class="detail-info-content">+49 1111111</span>
+        </div>
+    </div>
 </div>
