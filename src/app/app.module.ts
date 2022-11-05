@@ -10,7 +10,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { SummaryComponent } from './summary/summary.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { HeaderbarComponent } from './headerbar/headerbar.component';
-import { AddtaskComponent } from './addtask/addtask.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -27,7 +26,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { ContactsListComponent } from './contacts-list/contacts-list.component';
 import { ContactsDetailComponent } from './contacts-detail/contacts-detail.component';
-import { AddtaskouterComponent } from './addtaskouter/addtaskouter.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
@@ -37,6 +35,9 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { ContactAddDialogComponent } from './contact-add-dialog/contact-add-dialog.component';
 import { ContactDetailEditComponent } from './contact-detail-edit/contact-detail-edit.component';
+import { TaskAddDialogComponent } from './task-add-dialog/task-add-dialog.component';
+import { TaskAddRouterComponent } from './task-add-router/task-add-router.component';
+
 
 
 @NgModule({
@@ -45,16 +46,16 @@ import { ContactDetailEditComponent } from './contact-detail-edit/contact-detail
     SummaryComponent,
     SidenavComponent,
     HeaderbarComponent,
-    AddtaskComponent,
     LoginComponent,
     BoardComponent,
     MainComponent,
     ContactsComponent,
     ContactsListComponent,
     ContactsDetailComponent,
-    AddtaskouterComponent,
     ContactAddDialogComponent,
     ContactDetailEditComponent,
+    TaskAddDialogComponent,
+    TaskAddRouterComponent,
 
   ],
   imports: [

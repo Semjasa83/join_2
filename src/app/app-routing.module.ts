@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddtaskComponent } from './addtask/addtask.component';
 import { SummaryComponent } from './summary/summary.component';
 import { BoardComponent } from './board/board.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { MainComponent } from './main/main.component';
 import { LoginComponent } from './login/login.component';
-import { AddtaskouterComponent } from './addtaskouter/addtaskouter.component';
 import { ContactDetailEditComponent } from './contact-detail-edit/contact-detail-edit.component';
+import { TaskAddRouterComponent } from './task-add-router/task-add-router.component';
 
 
 const routes: Routes = [
@@ -24,7 +23,7 @@ const routes: Routes = [
           { path: '',   redirectTo: 'contacts', pathMatch: 'full' },
           { path: 'contactdetail/:id', component: ContactDetailEditComponent}
         ]},
-      { path: 'addtaskout', component: AddtaskouterComponent}
+      { path: 'addtask', component: TaskAddRouterComponent}
     ]
   },
   { path: '**', redirectTo: 'login' }
