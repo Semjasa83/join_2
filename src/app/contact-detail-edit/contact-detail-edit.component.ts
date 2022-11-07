@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ClientService } from '../client.service';
 import { ContactAddDialogComponent } from '../contact-add-dialog/contact-add-dialog.component';
 
 @Component({
@@ -9,12 +10,12 @@ import { ContactAddDialogComponent } from '../contact-add-dialog/contact-add-dia
 })
 export class ContactDetailEditComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
   openDialog() {
-    this.dialog.open(ContactAddDialogComponent);
+
   }
 }

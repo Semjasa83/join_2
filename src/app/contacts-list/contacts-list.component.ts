@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { collectionData, Firestore, collection } from '@angular/fire/firestore';
 import { ClientService } from '../client.service';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-contacts-list',
@@ -10,12 +11,23 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ContactsListComponent implements OnInit {
 
-    constructor(private firestore: Firestore, public client: ClientService, private route: ActivatedRoute) {
+  allContacts$!: Observable<any>;
+  allContacts: any = [];
+  selectedContact: any;
+
+  constructor(private firestore: Firestore, public client: ClientService, public route: ActivatedRoute) {
 
   }
 
   ngOnInit(): void {
-
+    this.allContacts$ = this.client.getAllContacts();
+    this.allContacts$.subscribe(contactsData => {
+      console.log(contactsData);
+      this.allContacts = contactsData;
+    } )
   }
 
+  openContact(contact: any) {
+    this.selectedContact = contact;
+  }
 }

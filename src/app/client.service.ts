@@ -12,30 +12,22 @@ import { Firestore, collectionData, docData } from '@angular/fire/firestore';
 
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-interface Pokemon {
-  height: number;
-  id: string;
-  description: string;
-  imgUrl: string;
-  name: string;
-  type: string;
-  weight: number;
-}
+import { Contact } from 'src/models/contact.class';
+
 @Injectable({
   providedIn: 'root'
 })
 export class ClientService {
 
-  private contactsCollection: CollectionReference<DocumentData>;
-
+  public contactsCollection: CollectionReference<DocumentData>;
 
   constructor(public readonly firestore: Firestore) {
 
-    this.contactsCollection = collection(this.firestore, 'contacts');
+    this.contactsCollection = collection(firestore, 'contacts');
   }
 
   getAllContacts() {
-    return collectionData(this.contactsCollection, {idField: 'id',}) as Observable<Pokemon[]>;
+    return collectionData(this.contactsCollection, {idField: 'id',}) as Observable<any>;
   }
 
   getContact(id: string) {
@@ -43,13 +35,13 @@ export class ClientService {
     return docData(contactsDocumentReference, { idField: 'id' });
   }
 
-  createContact(pokemon: Pokemon) {
-    return addDoc(this.contactsCollection, pokemon);
+  createContact(contact: Contact) {
+    return addDoc(this.contactsCollection, contact);
   }
 
-  updateContact(pokemon: Pokemon) {
-    const contactsDocumentReference = doc(this.firestore, `contacts/${pokemon.id}`);
-    return updateDoc(contactsDocumentReference, { ...pokemon });
+  updateContact(contact: Contact) {
+    const contactsDocumentReference = doc(this.firestore, `contacts/${contact.id}`);
+    return updateDoc(contactsDocumentReference, { ...contact });
   }
 
   deleteContact(id: string) {
