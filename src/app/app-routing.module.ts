@@ -5,7 +5,6 @@ import { BoardComponent } from './board/board.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { MainComponent } from './main/main.component';
 import { LoginComponent } from './login/login.component';
-import { ContactDetailEditComponent } from './contact-detail-edit/contact-detail-edit.component';
 import { TaskAddRouterComponent } from './task-add-router/task-add-router.component';
 
 
@@ -18,11 +17,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'summary', pathMatch: 'prefix' },
       { path: 'summary', component: SummaryComponent },
       { path: 'board', component:  BoardComponent },
-      { path: 'contacts', component: ContactsComponent,
-        children: [
-          { path: '',   redirectTo: 'contacts', pathMatch: 'full' },
-          { path: 'contactdetail/:id', component: ContactDetailEditComponent}
-        ]},
+      { path: 'contacts', component: ContactsComponent},
       { path: 'addtask', component: TaskAddRouterComponent}
     ]
   },

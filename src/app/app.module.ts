@@ -24,8 +24,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { ContactsComponent } from './contacts/contacts.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
-import { ContactsListComponent } from './contacts-list/contacts-list.component';
-import { ContactsDetailComponent } from './contacts-detail/contacts-detail.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
@@ -34,7 +32,6 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { ContactAddDialogComponent } from './contact-add-dialog/contact-add-dialog.component';
-import { ContactDetailEditComponent } from './contact-detail-edit/contact-detail-edit.component';
 import { TaskAddDialogComponent } from './task-add-dialog/task-add-dialog.component';
 import { TaskAddRouterComponent } from './task-add-router/task-add-router.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -51,10 +48,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     BoardComponent,
     MainComponent,
     ContactsComponent,
-    ContactsListComponent,
-    ContactsDetailComponent,
     ContactAddDialogComponent,
-    ContactDetailEditComponent,
     TaskAddDialogComponent,
     TaskAddRouterComponent,
 
