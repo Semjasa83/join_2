@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, } from '@angular/core';
 import { collectionData, Firestore, collection } from '@angular/fire/firestore';
 import { ClientService } from '../client.service';
 import { ActivatedRoute } from '@angular/router';
@@ -15,6 +15,7 @@ export class ContactsComponent implements OnInit {
 
   allContacts$!: Observable<any>;
   allContacts: any = [];
+  sortedContacts: any = [];
   selectedContact: any;
 
   constructor(private firestore: Firestore, public client: ClientService, public route: ActivatedRoute, public dialog: MatDialog) { }
@@ -33,6 +34,7 @@ export class ContactsComponent implements OnInit {
 
   openContact(contact: any) {
     this.selectedContact = contact;
+    console.log(this.selectedContact);
   }
 
 }

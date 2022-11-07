@@ -7,6 +7,8 @@ import {
   deleteDoc,
   doc,
   updateDoc,
+  Query, query,
+  orderBy,
 } from '@firebase/firestore';
 import { Firestore, collectionData, docData } from '@angular/fire/firestore';
 
@@ -19,15 +21,17 @@ import { Contact } from 'src/models/contact.class';
 })
 export class ClientService {
 
-  public contactsCollection: CollectionReference<DocumentData>;
+  private contactsCollection: CollectionReference<DocumentData>;
+  private sortedContacts: Query<DocumentData>;
 
   constructor(public readonly firestore: Firestore) {
 
     this.contactsCollection = collection(firestore, 'contacts');
+    this.sortedContacts = query(this.contactsCollection, orderBy('firstName', 'asc'));
   }
 
   getAllContacts() {
-    return collectionData(this.contactsCollection, {idField: 'id',}) as Observable<any>;
+    return collectionData(this.sortedContacts, {idField: 'id',}) as Observable<any>;
   }
 
   getContact(id: string) {

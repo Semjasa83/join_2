@@ -27,15 +27,10 @@ export class ContactAddDialogComponent implements OnInit {
 
   saveContact() {
     console.log(this.contact.toJSON());
+    this.contact.shortTag = this.getContactTag();
     this.contactJson = this.contact.toJSON();
     this.client.createContact(this.contactJson);
   }
-
-  // async saveContact() {
-  //   this.contact.shortTag = this.getContactTag();
-  //   const coll = collection(this.firestore, "contacts");
-  //   await addDoc (coll, this.contact.toJSON());
-  // }
 
   getContactTag() {
     let firstLetter = this.contact.firstName.charAt(0).toUpperCase();

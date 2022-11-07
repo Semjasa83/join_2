@@ -35,6 +35,7 @@ import { ContactAddDialogComponent } from './contact-add-dialog/contact-add-dial
 import { TaskAddDialogComponent } from './task-add-dialog/task-add-dialog.component';
 import { TaskAddRouterComponent } from './task-add-router/task-add-router.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ContactDetailComponent } from './contact-detail/contact-detail.component';
 
 
 
@@ -51,6 +52,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ContactAddDialogComponent,
     TaskAddDialogComponent,
     TaskAddRouterComponent,
+    ContactDetailComponent,
 
   ],
   imports: [

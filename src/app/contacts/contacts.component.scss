@@ -5,12 +5,19 @@
     padding: 0;
 }
 
+/** contact-list **/
+
 mat-list {
     padding-right: 1rem;
 }
 
 :host ::ng-deep .mat-line {
     font-size: 1rem;
+    span {
+        &::first-letter {
+            text-transform: uppercase;
+            }
+        }
 }
 
 .contact-list-container {
@@ -100,106 +107,3 @@ mat-list {
     margin-top: 1rem;
 }
 
-/** contact-detail-edit **/
-
-
-.contact-detail-cmpl {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-}
-
-.detail-header {
-    align-items: center;
-    display: flex;
-    
-    .detail-shorttag {
-        align-items: center;
-        background-color: red;
-        border-radius: 100%;
-        color: var(--font-white);
-        display: flex;
-        font-size: 2rem;
-        font-weight: 400;
-        height: 2rem;
-        justify-content: center;
-        padding: 2rem;
-        width: 2rem;
-    }
-    .detail-name-container {
-        margin-left: 2rem;
-        
-        .detail-name {
-            font-size: 2.25rem;
-            font-weight: 500;
-            margin-bottom: 1rem;
-        }
-        .detail-addtask {
-            align-items: center;
-            background-color: none !important;
-            border-radius: 5px;
-            border: none;
-            color: var(--font-blue);
-            display: flex;
-            font-size: 0.85rem;
-            
-            &:hover {
-                background-color: var(--shadow-light-color);
-                color: var(--font-black);
-                cursor: pointer;
-            }
-        }
-    }
-}
-
-.detail-edit {
-    align-items: center;
-    display: flex;
-    margin-top: 2rem;
-    
-    span {
-        font-size: 1.25rem;
-        font-weight: 300;
-        margin-right: 2rem;
-    }
-    .detail-edit-btn {
-        align-items: center;
-        border: none;
-        display: flex;
-        font-size: 0.85rem;
-        font-weight: 300;
-
-        &:hover {
-            background-color: var(--shadow-light-color);
-            cursor: pointer;
-        }
-    }
-}
-
-.detail-info {
-    display: flex;
-    flex-direction: column;
-    margin-top: 2rem;
-    
-    .detail-email {
-        display: flex;
-        flex-direction: column;
-    }
-    .detail-phone {
-        display: flex;
-        flex-direction: column;
-        margin-top: 1rem;
-    }
-}
-
-.detail-info-head {
-    font-weight: 500;
-    font-size: 1rem;
-    margin-bottom: 0.35rem;
-}
-
-.detail-info-content {
-    font-size: 0.9rem;
-    font-weight: 300;
-}

@@ -7,9 +7,9 @@
                 <mat-list-item class="contact-item" *ngFor="let contact of allContacts" routerLinkActive=""
                     routerLink="contactdetail/{{contact.id}}" (click)="openContact(contact)">
                     <div class="contact-shortcut">{{contact.shortTag}}</div>
-                    <div>
-                        <div mat-line><span class="contact-fn">{{contact.firstName}} </span><span
-                                class="contact-ln">{{contact.lastName}}</span></div>
+                    <div class="contact-names">
+                        <div mat-line><span class="contact-fn">{{contact.firstName | titlecase }} </span><span
+                                class="contact-ln">{{contact.lastName | titlecase }}</span></div>
                         <div mat-line class="contact-email">{{contact.email}}</div>
                     </div>
                 </mat-list-item>
@@ -22,35 +22,7 @@
             <span class="headline-1 head-2">Contacts</span>
             <span class="headline-txt">Better with a team</span>
         </div>
-        <div class="contact-detail">
-            <div class="contact-detail-cmpl">
-                <div class="detail-header">
-                    <div class="detail-shorttag">AM</div>
-                    <div class="detail-name-container">
-                        <div class="detail-name">Anton Mayer</div>
-                        <button class="detail-addtask">
-                            <mat-icon>add</mat-icon> Add Task
-                        </button>
-                    </div>
-                </div>
-                <div class="detail-edit">
-                    <span>Contact Information</span>
-                    <button class="detail-edit-btn">
-                        <mat-icon>edit</mat-icon>Edit Contact
-                    </button>
-                </div>
-                <div class="detail-info">
-                    <div class="detail-email">
-                        <span class="detail-info-head">Email</span>
-                        <span class="detail-info-content">atom@text.de</span>
-                    </div>
-                    <div class="detail-phone">
-                        <span class="detail-info-head">Phone</span>
-                        <span class="detail-info-content">+49 1111111</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <app-contact-detail [item]="selectedContact"></app-contact-detail>
         <button mat-stroked-button class="contact-add-btn" (click)="openDialog()">New Contact <mat-icon
                 fontIcon="person_add"></mat-icon></button>
     </div>
