@@ -1,10 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Input, Output, EventEmitter } from '@angular/core';
-import { Contact } from 'src/models/contact.class';
+import { Component, Input, OnInit } from '@angular/core';
 import { ClientService } from '../client.service';
-import { ContactsComponent } from '../contacts/contacts.component';
-
-
 
 @Component({
   selector: 'app-contact-detail',
@@ -13,15 +8,16 @@ import { ContactsComponent } from '../contacts/contacts.component';
 })
 export class ContactDetailComponent implements OnInit {
 
-  @Input() item: any;
+  changes!: any;
 
-  constructor(private client: ClientService, private sortContact: ContactsComponent) { }
+  constructor(public client: ClientService) { }
 
   ngOnInit(): void {
-    this.loadContact;
+    this.loadContact();
   }
 
   loadContact() {
-    console.log('test', this.item);
+    this.changes = this.client.selectedContact;
+    console.log('changes', this.changes);
   }
 }

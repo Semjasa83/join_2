@@ -22,7 +22,7 @@
             <span class="headline-1 head-2">Contacts</span>
             <span class="headline-txt">Better with a team</span>
         </div>
-        <app-contact-detail [item]="selectedContact"></app-contact-detail>
+        <router-outlet></router-outlet>
         <button mat-stroked-button class="contact-add-btn" (click)="openDialog()">New Contact <mat-icon
                 fontIcon="person_add"></mat-icon></button>
     </div>

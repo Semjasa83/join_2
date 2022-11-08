@@ -16,7 +16,7 @@ export class ContactsComponent implements OnInit {
   allContacts$!: Observable<any>;
   allContacts: any = [];
   sortedContacts: any = [];
-  selectedContact: any;
+
 
   constructor(private firestore: Firestore, public client: ClientService, public route: ActivatedRoute, public dialog: MatDialog) { }
 
@@ -33,8 +33,8 @@ export class ContactsComponent implements OnInit {
   }
 
   openContact(contact: any) {
-    this.selectedContact = contact;
-    console.log(this.selectedContact);
+    this.client.selectedContact = contact;
+    console.log('contact-comp', this.client.selectedContact);
   }
 
 }
