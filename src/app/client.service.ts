@@ -21,7 +21,8 @@ import { Contact } from 'src/models/contact.class';
 })
 export class ClientService {
 
-  public selectedContact: any;
+  selectedContact: any;
+
 
   private contactsCollection: CollectionReference<DocumentData>;
   private sortedContacts: Query<DocumentData>;

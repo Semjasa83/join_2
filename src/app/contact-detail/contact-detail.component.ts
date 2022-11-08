@@ -8,16 +8,9 @@ import { ClientService } from '../client.service';
 })
 export class ContactDetailComponent implements OnInit {
 
-  changes!: any;
-
   constructor(public client: ClientService) { }
 
   ngOnInit(): void {
-    this.loadContact();
   }
 
-  loadContact() {
-    this.changes = this.client.selectedContact;
-    console.log('changes', this.changes);
-  }
 }
