@@ -1,8 +1,8 @@
 <div class="contact-detail">
     <div class="detail-header">
-        <div class="detail-shorttag">{{client.selectedContact.shortTag}}</div>
+        <div class="detail-shorttag">{{client.selectedContact?.shortTag}}</div>
         <div class="detail-name-container">
-            <div class="detail-name">{{client.selectedContact.firstName}} {{client.selectedContact.lastName}}</div>
+            <div class="detail-name">{{client.selectedContact?.firstName}} {{client.selectedContact?.lastName}}</div>
             <button class="detail-addtask">
                 <mat-icon>add</mat-icon> Add Task
             </button>
@@ -17,11 +17,11 @@
     <div class="detail-info">
         <div class="detail-email">
             <span class="detail-info-head">Email</span>
-            <span class="detail-info-content">{{client.selectedContact.email}}</span>
+            <span class="detail-info-content">{{client.selectedContact?.email}}</span>
         </div>
         <div class="detail-phone">
             <span class="detail-info-head">Phone</span>
-            <span class="detail-info-content">{{client.selectedContact.phone}}</span>
+            <span class="detail-info-content">{{client.selectedContact?.phone}}</span>
         </div>
     </div>
 </div>
