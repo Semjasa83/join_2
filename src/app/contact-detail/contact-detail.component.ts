@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ClientService } from '../client.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ContactEditDialogComponent } from '../contact-edit-dialog/contact-edit-dialog.component';
 
 @Component({
   selector: 'app-contact-detail',
@@ -8,16 +10,14 @@ import { ClientService } from '../client.service';
   styleUrls: ['./contact-detail.component.scss']
 })
 export class ContactDetailComponent implements OnInit {
-
-  constructor(public client: ClientService, private route: ActivatedRoute) { }
+ 
+  constructor(public client: ClientService, private route: ActivatedRoute, public dialog: MatDialog) { }
 
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe( (paramMap) => {
-      const contactId = paramMap.get('id');
-      this.client.getContact(contactId as string)
-      .subscribe(contact => this.client.selectedContact = contact );
-    })
   }
 
+  openEditDialog() {
+    this.dialog.open(ContactEditDialogComponent);
+  }
 }

@@ -21,7 +21,7 @@ const routes: Routes = [
       { path: 'contacts', component: ContactsComponent,
         children: [
           { path: '',   redirectTo: 'contacts', pathMatch: 'full' },
-          { path: 'contactdetail/:id', component: ContactDetailComponent}
+          { path: 'contactdetail/:id', component: ContactDetailComponent }
         ]},
       { path: 'addtask', component: TaskAddRouterComponent}
     ]

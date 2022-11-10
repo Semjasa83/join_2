@@ -23,7 +23,6 @@ export class ClientService {
 
   selectedContact: any;
 
-
   private contactsCollection: CollectionReference<DocumentData>;
   private sortedContacts: Query<DocumentData>;
 
@@ -55,5 +54,4 @@ export class ClientService {
     const contactsDocumentReference = doc(this.firestore, `contacts/${id}`);
     return deleteDoc(contactsDocumentReference);
   }
-
 }
