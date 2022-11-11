@@ -1,4 +1,4 @@
-<div class="contact-detail">
+<div class="contact-detail" *ngIf="client.contactLoaded">
     <div class="detail-header">
         <div class="detail-shorttag">{{client.selectedContact?.shortTag}}</div>
         <div class="detail-name-container">

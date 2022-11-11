@@ -22,6 +22,7 @@ import { Contact } from 'src/models/contact.class';
 export class ClientService {
 
   selectedContact: any;
+  contactLoaded: boolean = false;
 
   private contactsCollection: CollectionReference<DocumentData>;
   private sortedContacts: Query<DocumentData>;

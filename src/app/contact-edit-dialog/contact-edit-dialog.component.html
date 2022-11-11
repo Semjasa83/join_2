@@ -10,37 +10,36 @@
     <div class="contact-dialog-right">
         <div class="close-dialog"><mat-icon mat-dialog-close>close</mat-icon></div>
         <div class="contact-initials">
-            <img class="initials-placeholder" src="./assets/img/initials-ph.svg">
-            <span></span>
+            <span>{{client.selectedContact.shortTag}}</span>
         </div>
         <div class="dialog-input-area">
             <mat-form-field appearance="outline">
-                <mat-label>Firstname</mat-label>
-                <input type="text" matInput placeholder="">
+                <mat-label>First Name</mat-label>
+                <input type="text" matInput placeholder="First Name" [(ngModel)]= "client.selectedContact.firstName">
                 <mat-icon matSuffix>person</mat-icon>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-                <mat-label>Lastname</mat-label>
-                <input type="text" matInput placeholder="">
+                <mat-label>Last Name</mat-label>
+                <input type="text" matInput placeholder="Last Name" [(ngModel)]= "client.selectedContact.lastName">
                 <mat-icon matSuffix>person</mat-icon>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
                 <mat-label>Email</mat-label>
-                <input type="text" matInput placeholder="">
+                <input type="text" matInput placeholder="Email" [(ngModel)]= "client.selectedContact.email">
                 <mat-icon matSuffix>mail</mat-icon>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
                 <mat-label>Phone</mat-label>
-                <input type="text" matInput placeholder="">
+                <input type="text" matInput placeholder="Phone" [(ngModel)]= "client.selectedContact.phone">
                 <mat-icon matSuffix>call</mat-icon>
             </mat-form-field>
 
             <div class="contact-dialog-btns">
                 <button mat-stroked-button mat-dialog-close class="cancel-btn">Cancel <mat-icon fontIcon="close"></mat-icon></button>
-                <button mat-stroked-button mat-dialog-close class="create-btn">Edit contact <mat-icon fontIcon="check"></mat-icon></button>
+                <button mat-stroked-button mat-dialog-close (click)="changeContactData()" class="create-btn">Edit contact <mat-icon fontIcon="check"></mat-icon></button>
             </div>
         </div>
     </div>

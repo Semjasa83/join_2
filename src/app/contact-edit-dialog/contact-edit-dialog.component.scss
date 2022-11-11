@@ -54,9 +54,14 @@
     
     .contact-initials {
         align-items: center;
-        background-color: var(--shadow-color);
+        background-color: red;
         border-radius: 100%;
+        border: 2px solid var(--font-white);
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         display: flex;
+        font-size: 2rem;
+        font-weight: 400;
+        color: var(--font-white);
         height: 120px;
         justify-content: center;
         margin: 2rem;

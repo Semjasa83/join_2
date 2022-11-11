@@ -34,6 +34,7 @@ export class ContactsComponent implements OnInit {
 
   openContact(contact: any) {
     this.client.selectedContact = contact;
+    this.client.contactLoaded = true;
     console.log('contact-comp', this.client.selectedContact);
   }
 
