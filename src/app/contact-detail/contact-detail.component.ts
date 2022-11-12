@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ClientService } from '../client.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ContactEditDialogComponent } from '../contact-edit-dialog/contact-edit-dialog.component';
+import { ContactDeleteDialogComponent } from '../contact-delete-dialog/contact-delete-dialog.component';
 
 @Component({
   selector: 'app-contact-detail',
@@ -19,5 +20,9 @@ export class ContactDetailComponent implements OnInit {
 
   openEditDialog() {
     this.dialog.open(ContactEditDialogComponent);
+  }
+
+  openDeleteDialog() {
+    this.dialog.open(ContactDeleteDialogComponent);
   }
 }

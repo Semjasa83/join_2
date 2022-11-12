@@ -10,9 +10,11 @@
     </div>
     <div class="detail-edit">
         <span>Contact Information</span>
-        <button class="detail-edit-btn" (click)="openEditDialog()">
-            <mat-icon>edit</mat-icon>Edit Contact
-        </button>
+        <button mat-button [matMenuTriggerFor]="menu" class="detail-edit-btn"><mat-icon matSuffix>menu</mat-icon></button>
+        <mat-menu #menu="matMenu" class="edit-menu">
+            <button mat-menu-item class="edit-menu-btn" (click)="openEditDialog()"><mat-icon>edit</mat-icon>Edit</button>
+            <button mat-menu-item class="edit-menu-btn" (click)="openDeleteDialog()"><mat-icon>delete</mat-icon>Delete</button>
+        </mat-menu>
     </div>
     <div class="detail-info">
         <div class="detail-email">

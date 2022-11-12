@@ -4,7 +4,7 @@
             <mat-list>
                 <div mat-subheader>A</div>
                 <mat-divider></mat-divider>
-                <mat-list-item class="contact-item" *ngFor="let contact of allContacts" routerLinkActive=""
+                <mat-list-item class="contact-item" *ngFor="let contact of allContacts" routerLinkActive="active-contact"
                     routerLink="contactdetail/{{contact.id}}" (click)="openContact(contact)">
                     <div class="contact-shortcut">{{contact.shortTag}}</div>
                     <div class="contact-names">

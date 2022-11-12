@@ -23,7 +23,7 @@ export class ContactsComponent implements OnInit {
   ngOnInit(): void {
     this.allContacts$ = this.client.getAllContacts();
     this.allContacts$.subscribe(contactsData => {
-      console.log(contactsData);
+      // console.log(contactsData);
       this.allContacts = contactsData;
     } )
   }
@@ -35,7 +35,7 @@ export class ContactsComponent implements OnInit {
   openContact(contact: any) {
     this.client.selectedContact = contact;
     this.client.contactLoaded = true;
-    console.log('contact-comp', this.client.selectedContact);
+    // console.log('contact-comp', this.client.selectedContact);
   }
 
 }

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Firestore, collectionData, collection } from '@angular/fire/firestore';
 import { ClientService } from '../client.service';
 import { ActivatedRoute } from '@angular/router';
-import { Contact } from 'src/models/contact.class';
 
 @Component({
   selector: 'app-contact-edit-dialog',
@@ -12,7 +11,6 @@ import { Contact } from 'src/models/contact.class';
 export class ContactEditDialogComponent implements OnInit {
 
   contactEdit: any;
-  contactEditJson: any;
 
   constructor(private firestore: Firestore, public client: ClientService, private route: ActivatedRoute) { }
 
