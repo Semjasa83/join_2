@@ -17,8 +17,6 @@ export class ContactDeleteDialogComponent implements OnInit {
   }
 
   removeContact() {
-    this.deleteContact = this.client.selectedContact;
-    console.log('del', this.deleteContact);
-    this.client.deleteContact(this.deleteContact);
+    this.client.deleteContact(this.client.selectedContact.id);
   }
 }

@@ -21,6 +21,6 @@ export class ContactEditDialogComponent implements OnInit {
   changeContactData() {
     this.contactEdit = this.client.selectedContact;
     this.client.updateContact(this.contactEdit);
-    console.log('update',this.contactEdit);
   }
+
 }

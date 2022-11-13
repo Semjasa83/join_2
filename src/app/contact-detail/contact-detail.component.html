@@ -2,7 +2,7 @@
     <div class="detail-header">
         <div class="detail-shorttag">{{client.selectedContact?.shortTag}}</div>
         <div class="detail-name-container">
-            <div class="detail-name">{{client.selectedContact?.firstName}} {{client.selectedContact?.lastName}}</div>
+            <div class="detail-name">{{client.selectedContact?.firstName | titlecase }} {{client.selectedContact?.lastName | titlecase }}</div>
             <button class="detail-addtask">
                 <mat-icon>add</mat-icon> Add Task
             </button>
