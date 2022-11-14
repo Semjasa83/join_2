@@ -10,7 +10,7 @@
     <div class="contact-dialog-right">
         <div class="close-dialog"><mat-icon mat-dialog-close>close</mat-icon></div>
         <div class="contact-initials">
-            <span>{{client.selectedContact.shortTag}}</span>
+            <span>{{client.selectedContact.firstName.charAt(0)}}{{client.selectedContact.lastName.charAt(0)}}</span>
         </div>
         <div class="dialog-input-area">
             <mat-form-field appearance="outline">

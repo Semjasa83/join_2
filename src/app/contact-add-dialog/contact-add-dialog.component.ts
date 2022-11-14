@@ -26,8 +26,9 @@ export class ContactAddDialogComponent implements OnInit {
   }
 
   saveContact() {
-    console.log(this.contact.toJSON());
+    this.contact.color = this.getRandomColor();
     this.contact.shortTag = this.getContactTag();
+    console.log(this.contact.toJSON());
     this.contactJson = this.contact.toJSON();
     this.client.createContact(this.contactJson);
   }
@@ -47,4 +48,13 @@ export class ContactAddDialogComponent implements OnInit {
   //     phone: [this.contact.phone, [Validators.required]],
   //   });
   // }
+  getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    console.log(color);
+    return color;
+  }
 }
