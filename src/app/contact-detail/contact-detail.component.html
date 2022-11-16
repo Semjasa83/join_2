@@ -1,6 +1,6 @@
 <div class="contact-detail" *ngIf="client.contactLoaded">
     <div class="detail-header">
-        <div class="detail-shorttag">{{client.selectedContact?.shortTag}}</div>
+        <div class="detail-shorttag">{{client.selectedContact?.firstName.charAt(0) | titlecase }}{{client.selectedContact?.lastName.charAt(0) | titlecase}}</div>
         <div class="detail-name-container">
             <div class="detail-name">{{client.selectedContact?.firstName | titlecase }} {{client.selectedContact?.lastName | titlecase }}</div>
             <button class="detail-addtask">

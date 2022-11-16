@@ -6,7 +6,7 @@
                 <mat-divider></mat-divider>
                 <mat-list-item class="contact-item" *ngFor="let contact of allContacts" routerLinkActive="active-contact"
                     routerLink="contactdetail/{{contact.id}}" (click)="openContact(contact)">
-                    <div class="contact-shortcut" style="background-color: {{contact.color}} ">{{contact.shortTag}}</div>
+                    <div class="contact-shortcut" [ngStyle]="{'background-color': contact.color}">{{contact.shortTag}}</div>
                     <div class="contact-names">
                         <div mat-line><span class="contact-fn">{{contact.firstName | titlecase }} </span><span
                                 class="contact-ln">{{contact.lastName | titlecase }}</span></div>
