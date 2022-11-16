@@ -19,8 +19,15 @@ export class ContactEditDialogComponent implements OnInit {
   }
 
   changeContactData() {
+    this.client.selectedContact.shortTag = this.getEditContactTag();
     this.contactEdit = this.client.selectedContact;
     this.client.updateContact(this.contactEdit);
   }
 
+  getEditContactTag() {
+    let firstLetter = this.client.selectedContact.firstName.charAt(0).toUpperCase();
+    let secondLetter = this.client.selectedContact.lastName.charAt(0).toUpperCase();
+    let shortTag = firstLetter + secondLetter;
+    return shortTag; 
+  }
 }
