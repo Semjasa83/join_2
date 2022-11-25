@@ -2,9 +2,9 @@ import { Component, Injector, OnInit } from '@angular/core';
 import { Firestore, collectionData, collection } from '@angular/fire/firestore';
 import { FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
 import { ClientService } from '../client.service';
-import { MatLegacyDialogRef as MatDialogRef, MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA } from '@angular/material/legacy-dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Contact } from 'src/models/contact.class';
-import { addDoc } from "firebase/firestore"; 
+import { addDoc } from "firebase/firestore";
 import { Observable } from 'rxjs';
 
 @Component({
@@ -37,7 +37,7 @@ export class ContactAddDialogComponent implements OnInit {
     let firstLetter = this.contact.firstName.charAt(0).toUpperCase();
     let secondLetter = this.contact.lastName.charAt(0).toUpperCase();
     let shortTag = firstLetter + secondLetter;
-    return shortTag; 
+    return shortTag;
   }
 
   // setContactForm() {

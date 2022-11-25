@@ -3,7 +3,7 @@ import { collectionData, Firestore, collection } from '@angular/fire/firestore';
 import { ClientService } from '../client.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { ContactAddDialogComponent } from '../contact-add-dialog/contact-add-dialog.component';
 
 @Component({

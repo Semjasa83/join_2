@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ClientService } from '../client.service';
-import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { ContactEditDialogComponent } from '../contact-edit-dialog/contact-edit-dialog.component';
 import { ContactDeleteDialogComponent } from '../contact-delete-dialog/contact-delete-dialog.component';
 
@@ -11,7 +11,7 @@ import { ContactDeleteDialogComponent } from '../contact-delete-dialog/contact-d
   styleUrls: ['./contact-detail.component.scss']
 })
 export class ContactDetailComponent implements OnInit {
- 
+
   constructor(public client: ClientService, private route: ActivatedRoute, public dialog: MatDialog) { }
 
 
