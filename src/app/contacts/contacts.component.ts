@@ -15,8 +15,6 @@ export class ContactsComponent implements OnInit {
 
   allContacts$!: Observable<any>;
   allContacts: any = [];
-  sortedContacts: any = [];
-
 
   constructor(private firestore: Firestore, public client: ClientService, public route: ActivatedRoute, public dialog: MatDialog) { }
 
