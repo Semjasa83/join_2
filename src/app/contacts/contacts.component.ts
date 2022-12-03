@@ -16,6 +16,7 @@ export class ContactsComponent implements OnInit {
   allContacts$!: Observable<any>;
   allContacts: any = [];
   sortIndexLetter: any = [];
+  filteredIndexChars: any = [];
 
   constructor(private firestore: Firestore, public client: ClientService, public route: ActivatedRoute, public dialog: MatDialog) { }
 
@@ -25,6 +26,7 @@ export class ContactsComponent implements OnInit {
       this.allContacts = contactsData;
             // console.log('allcontacts', this.allContacts);
             this.letterLoop();
+            this.filterIndexLetters();
     } )
   }
 
@@ -43,6 +45,15 @@ export class ContactsComponent implements OnInit {
       this.sortIndexLetter.push(alphabet);
     }
     console.log('arrayAlpha', this.sortIndexLetter);
+  }
+  filterIndexLetters() {
+    let filteredChars = this.sortIndexLetter.filter((element: any, index: any) => {
+      return this.sortIndexLetter.indexOf(element) === index;
+    })
+    this.filteredIndexChars = filteredChars;
+      console.log('filter', this.filteredIndexChars);
+
+
   }
 
 }
