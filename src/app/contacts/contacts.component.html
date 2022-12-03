@@ -1,8 +1,8 @@
 <div class="contacts-cmpl">
     <div class="contact-list-container">
         <div class="contacts-list">
-            <mat-list>
-                <div mat-subheader>A</div>
+            <mat-list *ngFor="let filterChar of filteredIndexChars">
+                <div mat-subheader>{{filterChar}}</div>
                 <mat-divider></mat-divider>
                 <mat-list-item class="contact-item" *ngFor="let contact of allContacts" routerLinkActive="active-contact"
                     routerLink="contactdetail/{{contact.id}}" (click)="openContact(contact)">
