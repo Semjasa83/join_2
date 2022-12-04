@@ -9,7 +9,7 @@
 .detail-header {
     align-items: center;
     display: flex;
-    
+
     .detail-shorttag {
         align-items: center;
         background-color: red;
@@ -27,21 +27,23 @@
     }
     .detail-name-container {
         margin-left: 2rem;
-        
+
         .detail-name {
             font-size: 2.25rem;
             font-weight: 500;
+            flex-wrap: wrap;
+            line-height: inherit;
             margin-bottom: 1rem;
         }
         .detail-addtask {
             align-items: center;
-            background-color: none !important;
+            background-color: unset !important;
             border-radius: 5px;
             border: none;
             color: var(--font-blue);
             display: flex;
             font-size: 0.85rem;
-            
+
             &:hover {
                 background-color: var(--shadow-light-color);
                 color: var(--font-black);
@@ -55,7 +57,7 @@
     align-items: center;
     display: flex;
     margin-top: 2rem;
-    
+
     span {
         font-size: 1.25rem;
         font-weight: 300;
@@ -79,7 +81,7 @@
     display: flex;
     flex-direction: column;
     margin-top: 2rem;
-    
+
     .detail-email {
         display: flex;
         flex-direction: column;
