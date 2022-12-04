@@ -1,10 +1,10 @@
-import { Component, Input, OnInit, Output, } from '@angular/core';
-import { collectionData, Firestore, collection } from '@angular/fire/firestore';
-import { ClientService } from '../client.service';
-import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
-import { MatDialog } from '@angular/material/dialog';
-import { ContactAddDialogComponent } from '../contact-add-dialog/contact-add-dialog.component';
+import {Component, Input, OnInit, Output,} from '@angular/core';
+import {collectionData, Firestore, collection} from '@angular/fire/firestore';
+import {ClientService} from '../client.service';
+import {ActivatedRoute} from '@angular/router';
+import {Observable} from 'rxjs';
+import {MatDialog} from '@angular/material/dialog';
+import {ContactAddDialogComponent} from '../contact-add-dialog/contact-add-dialog.component';
 
 @Component({
   selector: 'app-contacts',
@@ -18,16 +18,17 @@ export class ContactsComponent implements OnInit {
   sortIndexLetter: any = [];
   filteredIndexChars: any = [];
 
-  constructor(private firestore: Firestore, public client: ClientService, public route: ActivatedRoute, public dialog: MatDialog) { }
+  constructor(private firestore: Firestore, public client: ClientService, public route: ActivatedRoute, public dialog: MatDialog) {
+  }
 
   ngOnInit(): void {
     this.allContacts$ = this.client.getAllContacts();
     this.allContacts$.subscribe(contactsData => {
       this.allContacts = contactsData;
-            // console.log('allcontacts', this.allContacts);
-            this.letterLoop();
-            this.filterIndexLetters();
-    } )
+      // console.log('allcontacts', this.allContacts);
+      this.letterLoop();
+      this.filterIndexLetters();
+    })
   }
 
   openDialog() {
@@ -44,16 +45,16 @@ export class ContactsComponent implements OnInit {
       let alphabet = this.allContacts[i].shortTag.charAt(0);
       this.sortIndexLetter.push(alphabet);
     }
-    console.log('arrayAlpha', this.sortIndexLetter);
+/*    console.log('arrayAlpha', this.sortIndexLetter);*/
+    console.log('contacts', this.allContacts);
   }
+
   filterIndexLetters() {
     let filteredChars = this.sortIndexLetter.filter((element: any, index: any) => {
       return this.sortIndexLetter.indexOf(element) === index;
     })
     this.filteredIndexChars = filteredChars;
-      console.log('filter', this.filteredIndexChars);
-
-
+    console.log('filter', this.filteredIndexChars);
   }
 
 }

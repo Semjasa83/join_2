@@ -13,9 +13,9 @@ mat-list {
 
 :host ::ng-deep .mat-line {
     font-size: 1rem;
-    
+
     span {
-        
+
         &::first-letter {
             text-transform: uppercase;
         }
@@ -62,11 +62,15 @@ mat-list {
     align-items: center;
     margin-top: 0.25rem;
     margin-bottom: 0.5rem;
-    
+
     &:hover {
         background-color: var(--shadow-light-color);
         cursor: pointer;
     }
+}
+
+.contact-item-wrapper {
+  display: flex;
 }
 
 .contact-email {
@@ -88,7 +92,7 @@ mat-list {
     display: flex;
     padding-bottom: 2rem;
     padding-top: 2rem;
-    
+
     .headline-1 {
         margin-right: 2rem;
     }
@@ -107,7 +111,7 @@ mat-list {
     display: flex;
     position: absolute;
     right: 2rem;
-    
+
     &:hover {
         background-color: var(--font-blue);
     }
