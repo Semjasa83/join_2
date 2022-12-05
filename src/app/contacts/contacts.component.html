@@ -5,16 +5,19 @@
         <div mat-subheader>{{filterChar}}</div>
         <mat-divider></mat-divider>
         <div *ngFor="let contact of allContacts">
-          <mat-list-item class="contact-item" *ngIf="filterChar == contact.shortTag[0]"
-                         routerLinkActive="active-contact"
-                         routerLink="contactdetail/{{contact.id}}" (click)="openContact(contact)">
-            <div class="contact-shortcut" [ngStyle]="{'background-color': contact.color}">{{contact.shortTag}}</div>
-            <div class="contact-names">
-              <div mat-line><span class="contact-fn">{{contact.firstName | titlecase }} </span><span
-                class="contact-ln">{{contact.lastName | titlecase }}</span></div>
-              <div mat-line class="contact-email">{{contact.email}}</div>
-            </div>
-          </mat-list-item>
+          <ng-container *ngIf="filterChar == contact.shortTag[0]">
+            <mat-list-item class="contact-item"
+                           routerLinkActive="active-contact"
+                           routerLink="contactdetail/{{contact.id}}" (click)="openContact(contact)">
+              <div class="contact-shortcut" [ngStyle]="{'background-color': contact.color}">{{contact.shortTag}}</div>
+              <div class="contact-names">
+                <div mat-line><span class="contact-fn">{{contact.firstName | titlecase }} </span><span
+                  class="contact-ln">{{contact.lastName | titlecase }}</span></div>
+                <div mat-line class="contact-email">{{contact.email}}</div>
+              </div>
+            </mat-list-item>
+          </ng-container>
+
         </div>
       </mat-list>
     </div>
