@@ -36,6 +36,8 @@ export class ContactAddDialogComponent implements OnInit {
     this.contact.firstName = this.contactForm.controls['firstName'].value;
     this.contact.lastName = this.contactForm.controls['lastName'].value;
     this.contact.phone = this.contactForm.controls['phone'].value;
+    console.log(this.contact.firstName);
+    this.saveContact();
   }
 
   saveContact() {
