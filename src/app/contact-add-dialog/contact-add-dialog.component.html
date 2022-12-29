@@ -13,7 +13,7 @@
             <img class="initials-placeholder" src="./assets/img/initials-ph.svg">
             <span></span>
         </div>
-        <form [formGroup]="contactForm" class="dialog-input-area" (ngSubmit)="saveContact()">
+        <form [formGroup]="contactForm" class="dialog-input-area" (ngSubmit)="onSubmit()">
             <mat-form-field appearance="outline">
                 <mat-label for="first-name">Firstname</mat-label>
                 <input id="first-name" type="text" formControlName="firstName" matInput placeholder="">
