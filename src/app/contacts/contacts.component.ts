@@ -46,7 +46,7 @@ export class ContactsComponent implements OnInit {
       this.sortIndexLetter.push(alphabet);
     }
 /*    console.log('arrayAlpha', this.sortIndexLetter);*/
-    console.log('contacts', this.allContacts);
+    //console.log('contacts', this.allContacts);
   }
 
   filterIndexLetters() {
@@ -54,7 +54,7 @@ export class ContactsComponent implements OnInit {
       return this.sortIndexLetter.indexOf(element) === index;
     })
     this.filteredIndexChars = filteredChars;
-    console.log('filter', this.filteredIndexChars);
+    //console.log('filter', this.filteredIndexChars);
   }
 
 }

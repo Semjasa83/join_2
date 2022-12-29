@@ -6,6 +6,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Contact } from 'src/models/contact.class';
 import { addDoc } from "firebase/firestore";
 import { Observable } from 'rxjs';
+import { FormBuilder } from "@angular/forms";
 
 @Component({
   selector: 'app-contact-add-dialog',
@@ -14,21 +15,31 @@ import { Observable } from 'rxjs';
 })
 export class ContactAddDialogComponent implements OnInit {
 
-
   contact: Contact = new Contact();
   shortTag: string = '';
   contactJson: any;
 
-  constructor( private firestore: Firestore, public client: ClientService) { }
+  constructor( private firestore: Firestore, public client: ClientService, private formbuilder: FormBuilder) { }
+
+  contactForm: FormGroup = this.formbuilder.group({
+    firstName: [this.contact.firstName, [Validators.required]],
+    lastName: [this.contact.lastName, [Validators.required]],
+    email: [this.contact.email, [Validators.required]],
+    phone: [this.contact.phone, [Validators.required]],
+  });
 
   ngOnInit(): void {
+  }
 
+  onSubmit() {
+    console.log(this.contactForm.value);
+    this.saveContact();
   }
 
   saveContact() {
     this.contact.color = this.getRandomColor();
     this.contact.shortTag = this.getContactTag();
-    console.log(this.contact.toJSON());
+    //console.log(this.contact.toJSON());
     this.contactJson = this.contact.toJSON();
     this.client.createContact(this.contactJson);
   }
@@ -40,19 +51,11 @@ export class ContactAddDialogComponent implements OnInit {
     return shortTag;
   }
 
-  // setContactForm() {
-  //   this.newContact = new FormGroup({
-  //     firstName: [this.contact.firstName, [Validators.required]],
-  //     lastName: [this.contact.lastName, [Validators.required]],
-  //     email: [this.contact.email, [Validators.required]],
-  //     phone: [this.contact.phone, [Validators.required]],
-  //   });
-  // }
   getRandomColor() {
     var letters = '0123456789ABCDEF';
     var color = '#';
     for (var i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
+      color += letters ;
     }
     console.log(color);
     return color;

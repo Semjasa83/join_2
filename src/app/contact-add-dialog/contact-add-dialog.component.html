@@ -13,35 +13,35 @@
             <img class="initials-placeholder" src="./assets/img/initials-ph.svg">
             <span></span>
         </div>
-        <div class="dialog-input-area">
+        <form [formGroup]="contactForm" class="dialog-input-area" (ngSubmit)="onSubmit()">
             <mat-form-field appearance="outline">
-                <mat-label>Firstname</mat-label>
-                <input type="text" matInput [(ngModel)]= "contact.firstName" placeholder="">
+                <mat-label for="first-name">Firstname</mat-label>
+                <input id="first-name" type="text" formControlName="firstName" matInput placeholder="">
                 <mat-icon matSuffix>person</mat-icon>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-                <mat-label>Lastname</mat-label>
-                <input type="text" matInput [(ngModel)]= "contact.lastName" placeholder="">
+                <mat-label for="last-name">Lastname</mat-label>
+                <input id="last-name" type="text" formControlName="lastName" matInput placeholder="">
                 <mat-icon matSuffix>person</mat-icon>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-                <mat-label>Email</mat-label>
-                <input type="text" matInput [(ngModel)]= "contact.email" placeholder="">
+                <mat-label for="email">Email</mat-label>
+                <input id="email" type="email" formControlName="email" matInput placeholder="">
                 <mat-icon matSuffix>mail</mat-icon>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-                <mat-label>Phone</mat-label>
-                <input type="text" matInput [(ngModel)]= "contact.phone" placeholder="">
+                <mat-label for="phone">Phone</mat-label>
+                <input id="phone" type="number" matInput formControlName="phone" placeholder="">
                 <mat-icon matSuffix>call</mat-icon>
             </mat-form-field>
 
             <div class="contact-dialog-btns">
                 <button mat-stroked-button mat-dialog-close class="cancel-btn">Cancel <mat-icon fontIcon="close"></mat-icon></button>
-                <button mat-stroked-button mat-dialog-close (click)="saveContact()" class="create-btn">Create contact <mat-icon fontIcon="check"></mat-icon></button>
+                <button mat-stroked-button mat-dialog-close [disabled]="!contactForm.valid" type="submit" class="create-btn">Create contact <mat-icon fontIcon="check"></mat-icon></button>
             </div>
-        </div>
+        </form>
     </div>
 </div>
