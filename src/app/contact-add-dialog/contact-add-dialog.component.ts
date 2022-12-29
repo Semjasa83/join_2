@@ -22,24 +22,26 @@ export class ContactAddDialogComponent implements OnInit {
   constructor( private firestore: Firestore, public client: ClientService, private formbuilder: FormBuilder) { }
 
   contactForm: FormGroup = this.formbuilder.group({
-    firstName: [this.contact.firstName, [Validators.required]],
-    lastName: [this.contact.lastName, [Validators.required]],
-    email: [this.contact.email, [Validators.required]],
-    phone: [this.contact.phone, [Validators.required]],
+    firstName: ['', [Validators.required]],
+    lastName: ['', [Validators.required]],
+    email: ['', [Validators.required, Validators.email]],
+    phone: ['', [Validators.required]],
   });
 
   ngOnInit(): void {
   }
 
   onSubmit() {
-    console.log(this.contactForm.value);
-    this.saveContact();
+    this.contact.email = this.contactForm.controls['email'].value;
+    this.contact.firstName = this.contactForm.controls['firstName'].value;
+    this.contact.lastName = this.contactForm.controls['lastName'].value;
+    this.contact.phone = this.contactForm.controls['phone'].value;
   }
 
   saveContact() {
     this.contact.color = this.getRandomColor();
     this.contact.shortTag = this.getContactTag();
-    //console.log(this.contact.toJSON());
+    console.log(this.contact.toJSON());
     this.contactJson = this.contact.toJSON();
     this.client.createContact(this.contactJson);
   }
@@ -57,7 +59,7 @@ export class ContactAddDialogComponent implements OnInit {
     for (var i = 0; i < 6; i++) {
       color += letters ;
     }
-    console.log(color);
+    //console.log(color);
     return color;
   }
 }
