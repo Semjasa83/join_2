@@ -27,10 +27,16 @@ export class ClientService {
   private contactsCollection: CollectionReference<DocumentData>;
   private sortedContacts: Query<DocumentData>;
 
+  private tasksCollection: CollectionReference<DocumentData>;
+  //private sortedTasks: Query<DocumentData>;
+
   constructor(public readonly firestore: Firestore) {
 
     this.contactsCollection = collection(firestore, 'contacts');
     this.sortedContacts = query(this.contactsCollection, orderBy('firstName', 'asc'));
+
+    this.tasksCollection = collection(firestore, 'tasks');
+    //this.sortedTasks = query(this.contactsCollection, orderBy('firstName', 'asc'));
   }
 
   getAllContacts() {
