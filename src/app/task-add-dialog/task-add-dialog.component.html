@@ -1,4 +1,4 @@
-<form class="addtask-form">
+<form [formGroup]="taskForm" class="addtask-form" (ngSubmit)="onSubmit()">
     <span class="head-2">Add Task</span>
 
     <div class="addtask-content">
@@ -7,18 +7,19 @@
             <span>Title</span>
             <mat-form-field appearance="outline">
                 <mat-label>Enter a title</mat-label>
-                <input matInput>
+                <input id="task-title" type="text" formControlName="taskTitle" matInput>
             </mat-form-field>
 
             <span>Description</span>
             <mat-form-field appearance="outline">
                 <mat-label>Enter a Description</mat-label>
-                <textarea matInput></textarea>
+                <textarea id="task-text" type="text" formControlName="taskText" matInput></textarea>
             </mat-form-field>
 
             <span>Category</span>
             <mat-form-field appearance="outline">
                 <mat-label>Select task category</mat-label>
+                <!--Form TODO-->
                 <mat-select>
                     <mat-option value="one">First option</mat-option>
                     <mat-option value="two">Second option</mat-option>
@@ -28,6 +29,7 @@
             <span>Assigned to</span>
             <mat-form-field appearance="outline">
                 <mat-label>Select contacts to assign</mat-label>
+                <!--Form TODO-->
                 <mat-select>
                     <mat-option value="one">First option</mat-option>
                     <mat-option value="two">Second option</mat-option>
@@ -40,19 +42,20 @@
             <span>Due date</span>
             <mat-form-field appearance="outline">
                 <mat-label>MM/DD/YYYY</mat-label>
-                <input matInput [matDatepicker]="picker">
+                <input id="task-date" type="date" formControlName="taskDate"  matInput [matDatepicker]="picker">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
 
             <span>Prio</span>
+            <!--Form TODO-->
             <div class="addtask-prio-btn">
                 <button mat-stroked-button>Urgent <img src="./assets/img/urgent_col.svg" class="addtask-icon"></button>
                 <button mat-stroked-button>Medium <img src="./assets/img/med_col.svg" class="addtask-icon"></button>
                 <button mat-stroked-button>Low <img src="./assets/img/low_col.svg" class="addtask-icon"></button>
             </div>
 
-            <span>Subtasks</span>
+            <!-- <span>Subtasks</span>
             <mat-form-field appearance="outline" class="addtask-sub">
                 <mat-label>Add new subtask</mat-label>
                 <input matInput>
@@ -62,13 +65,13 @@
             </mat-form-field>
             <div class="addtask-checkboxes">
                 <mat-checkbox>TEST 1</mat-checkbox>
-            </div>
+            </div> -->
         </div>
     </div>
 
     <div class="addtask-btns">
         <button mat-stroked-button class="addtask-btn-clear">Clear <mat-icon fontIcon="close"></mat-icon></button>
-        <button mat-stroked-button class="addtask-btn-task">Create Task <mat-icon fontIcon="check"></mat-icon>
+        <button mat-stroked-button [disabled]="!taskForm.valid" type="submit" class="addtask-btn-task">Create Task <mat-icon fontIcon="check"></mat-icon>
         </button>
     </div>
 </form> 
