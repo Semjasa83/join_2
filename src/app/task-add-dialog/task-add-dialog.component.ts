@@ -13,6 +13,10 @@ import { FormBuilder } from "@angular/forms";
 export class TaskAddDialogComponent implements OnInit {
 
   task: Task = new Task();
+  setUrgent: boolean = false;
+  setMedium: boolean = false;
+  setLow: boolean = false;
+  priority: string ='';
 
   constructor(private firestore: Firestore, public client: ClientService, private formbuilder: FormBuilder) { }
 
@@ -33,4 +37,8 @@ export class TaskAddDialogComponent implements OnInit {
     //this.saveContact();
   }
 
+  setPriority(prio: string) {
+    this.priority = prio;
+    console.log(this.priority);
+  }
 }
