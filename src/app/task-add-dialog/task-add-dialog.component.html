@@ -51,19 +51,13 @@
             <span>Prio</span>
             <!--Form TODO-->
             <div class="addtask-prio-btn">
-                <button mat-stroked-button 
-                    (click)="setPriority('urgent')"
-                    [class.active]="priority === 'urgent'">
+                <button mat-stroked-button (click)="setPriority('urgent')">
                     Urgent <img src="./assets/img/urgent_col.svg" class="addtask-icon">
                 </button>
-                <button mat-stroked-button
-                    (click)="setPriority('medium')"
-                    [class.active]="priority === 'medium'">
+                <button mat-stroked-button (click)="setPriority('medium')">
                     Medium <img src="./assets/img/med_col.svg" class="addtask-icon">
                 </button>
-                <button mat-stroked-button
-                    (click)="setPriority('low')"
-                    [class.active]="priority === 'low'">
+                <button mat-stroked-button (click)="setPriority('low')">
                     Low <img src="./assets/img/low_col.svg" class="addtask-icon">
                 </button>
             </div>
@@ -84,7 +78,7 @@
 
     <div class="addtask-btns">
         <button mat-stroked-button class="addtask-btn-clear">Clear <mat-icon fontIcon="close"></mat-icon></button>
-        <button mat-stroked-button [disabled]="!taskForm.valid" type="submit" class="addtask-btn-task">Create Task <mat-icon fontIcon="check"></mat-icon>
+        <button mat-stroked-button [ngClass]="{'disabled': !taskForm.valid}" [disabled]="!taskForm.valid" type="submit" class="addtask-btn-task">Create Task <mat-icon fontIcon="check"></mat-icon>
         </button>
     </div>
 </form> 
