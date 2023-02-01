@@ -51,13 +51,16 @@
             <span>Prio</span>
             <!--Form TODO-->
             <div class="addtask-prio-btn">
-                <button mat-stroked-button (click)="setPriority('urgent')">
+                <button mat-stroked-button type="button" (click)="setPriority('urgent')"
+                    [class.active]="priority === 'urgent'">
                     Urgent <img src="./assets/img/urgent_col.svg" class="addtask-icon">
                 </button>
-                <button mat-stroked-button (click)="setPriority('medium')">
+                <button mat-stroked-button type="button" (click)="setPriority('medium')"
+                    [class.active]="priority === 'medium'">
                     Medium <img src="./assets/img/med_col.svg" class="addtask-icon">
                 </button>
-                <button mat-stroked-button (click)="setPriority('low')">
+                <button mat-stroked-button type="button" (click)="setPriority('low')"
+                    [class.active]="priority === 'low'">
                     Low <img src="./assets/img/low_col.svg" class="addtask-icon">
                 </button>
             </div>
