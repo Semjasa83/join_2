@@ -2,8 +2,9 @@ export class Task {
     taskTitle: string;
     taskDescription: string;
     date: any;
-    id: string;
+    id: string; //observable über board -> id übergeben
     prio: string;
+    category: string;
 
     constructor (obj?: any) {
         this.taskTitle = obj ? obj.taskTitle : '';
@@ -11,6 +12,7 @@ export class Task {
         this.date = obj ? obj.date : '';
         this.id = obj ? obj.id : '';
         this.prio = obj ? obj.prio : '';
+        this.category = obj ? obj.category : '';
     }
 
     public toJSON() {
@@ -20,6 +22,7 @@ export class Task {
             date: this.date,
             id: this.id,
             prio: this.prio,
+            category: this.category,
         }
     }
 }

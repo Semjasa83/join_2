@@ -20,21 +20,14 @@
             <mat-form-field appearance="outline">
                 <mat-label>Select task category</mat-label>
                 <!--Form TODO-->
-                <mat-select>
-                    <mat-option value="one">First option</mat-option>
-                    <mat-option value="two">Second option</mat-option>
+                <mat-select name="category">
+                    <mat-option>None</mat-option>
+                    <mat-option *ngFor="let category of categories" [value]="category.value" (click)="setCategory(category.value)">
+                        {{category.viewValue}}
+                    </mat-option>
                 </mat-select>
             </mat-form-field>
 
-            <span>Assigned to</span>
-            <mat-form-field appearance="outline">
-                <mat-label>Select contacts to assign</mat-label>
-                <!--Form TODO-->
-                <mat-select>
-                    <mat-option value="one">First option</mat-option>
-                    <mat-option value="two">Second option</mat-option>
-                </mat-select>
-            </mat-form-field>
         </div>
 
         <div class="addtask-right bg-transparent">
@@ -65,6 +58,15 @@
                 </button>
             </div>
 
+            <span>Assigned to</span>
+            <mat-form-field appearance="outline">
+                <mat-label>Select contacts to assign</mat-label>
+                <!--Form TODO-->
+                <mat-select>
+                    <mat-option value="0">First option</mat-option>
+                    <mat-option value="1">Second option</mat-option>
+                </mat-select>
+            </mat-form-field>
             <!-- <span>Subtasks</span>
             <mat-form-field appearance="outline" class="addtask-sub">
                 <mat-label>Add new subtask</mat-label>
@@ -81,7 +83,8 @@
 
     <div class="addtask-btns">
         <button mat-stroked-button class="addtask-btn-clear">Clear <mat-icon fontIcon="close"></mat-icon></button>
-        <button mat-stroked-button [ngClass]="{'disabled': !taskForm.valid}" [disabled]="!taskForm.valid" type="submit" class="addtask-btn-task">Create Task <mat-icon fontIcon="check"></mat-icon>
+        <button mat-stroked-button [ngClass]="{'disabled': !taskForm.valid}" [disabled]="!taskForm.valid" type="submit"
+            class="addtask-btn-task">Create Task <mat-icon fontIcon="check"></mat-icon>
         </button>
     </div>
-</form> 
+</form>
