@@ -28,6 +28,17 @@
                 </mat-select>
             </mat-form-field>
 
+            <span>Assigned to</span>
+            <mat-form-field appearance="outline" (click)="loadContacts()">
+                <mat-label>Select contacts to assign</mat-label>
+                <!--Form TODO-->
+                <mat-select multiple>
+                    <mat-option *ngFor="let contact of allContacts">
+                        {{contact.firstName}} {{contact.lastName}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
         </div>
 
         <div class="addtask-right bg-transparent">
@@ -58,15 +69,6 @@
                 </button>
             </div>
 
-            <span>Assigned to</span>
-            <mat-form-field appearance="outline">
-                <mat-label>Select contacts to assign</mat-label>
-                <!--Form TODO-->
-                <mat-select>
-                    <mat-option value="0">First option</mat-option>
-                    <mat-option value="1">Second option</mat-option>
-                </mat-select>
-            </mat-form-field>
             <!-- <span>Subtasks</span>
             <mat-form-field appearance="outline" class="addtask-sub">
                 <mat-label>Add new subtask</mat-label>

@@ -4,6 +4,7 @@ import { ClientService } from '../client.service';
 import { Task } from 'src/models/task.class';
 import { FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
 import { FormBuilder } from "@angular/forms";
+import { Observable } from 'rxjs';
 
 
 interface Category {
@@ -24,6 +25,10 @@ export class TaskAddDialogComponent implements OnInit {
   setLow: boolean = false;
   priority: string = '';
   category: string = '';
+  assignedContact: string = '';
+
+  allContacts$!: Observable<any>;
+  allContacts: any = [];
 
   categories: Category[] = [
     {value: 'FrontEnd', viewValue: 'FrontEnd'},
@@ -78,5 +83,13 @@ export class TaskAddDialogComponent implements OnInit {
     !this.setMedium;
     !this.setLow;
     this.taskForm.reset();
+  }
+
+  loadContacts() {
+    this.allContacts$ = this.client.getAllContacts();
+    this.allContacts$.subscribe(contactsData => {
+      this.allContacts = contactsData;
+    console.log("function called selectContacts", this.allContacts)
+  })
   }
 }
