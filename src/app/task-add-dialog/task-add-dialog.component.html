@@ -19,9 +19,8 @@
             <span>Category</span>
             <mat-form-field appearance="outline">
                 <mat-label>Select task category</mat-label>
-                <!--Form TODO-->
-                <mat-select name="category">
-                    <mat-option>None</mat-option>
+                <mat-select name="category" formControlName="category">
+                    <mat-option value="None">None</mat-option>
                     <mat-option *ngFor="let category of categories" [value]="category.value" (click)="setCategory(category.value)">
                         {{category.viewValue}}
                     </mat-option>
@@ -31,9 +30,8 @@
             <span>Assigned to</span>
             <mat-form-field appearance="outline" (click)="loadContacts()">
                 <mat-label>Select contacts to assign</mat-label>
-                <!--Form TODO-->
-                <mat-select multiple>
-                    <mat-option *ngFor="let contact of allContacts">
+                <mat-select multiple formControlName="assignedTo">
+                    <mat-option *ngFor="let contact of allContacts" [value]="contact">
                         {{contact.firstName}} {{contact.lastName}}
                     </mat-option>
                 </mat-select>
@@ -53,18 +51,17 @@
             </mat-form-field>
 
             <span>Prio</span>
-            <!--Form TODO-->
             <div class="addtask-prio-btn">
                 <button mat-stroked-button type="button" (click)="setPriority('urgent')"
-                    [class.active]="priority === 'urgent'">
+                    [class.active]="priority === 'urgent'" [value]="'urgent'" [attr.aria-pressed]="priority === 'urgent' ? 'true' : 'false'">
                     Urgent <img src="./assets/img/urgent_col.svg" class="addtask-icon">
                 </button>
                 <button mat-stroked-button type="button" (click)="setPriority('medium')"
-                    [class.active]="priority === 'medium'">
+                    [class.active]="priority === 'medium'" [value]="'medium'" [attr.aria-pressed]="priority === 'medium' ? 'true' : 'false'">
                     Medium <img src="./assets/img/med_col.svg" class="addtask-icon">
                 </button>
                 <button mat-stroked-button type="button" (click)="setPriority('low')"
-                    [class.active]="priority === 'low'">
+                    [class.active]="priority === 'low'" [value]="'low'" [attr.aria-pressed]="priority === 'low' ? 'true' : 'false'">
                     Low <img src="./assets/img/low_col.svg" class="addtask-icon">
                 </button>
             </div>
@@ -78,13 +75,13 @@
                 </button>
             </mat-form-field>
             <div class="addtask-checkboxes">
-                <mat-checkbox>TEST 1</mat-checkbox>
+                <mat-checkbox></mat-checkbox>
             </div> -->
         </div>
     </div>
 
     <div class="addtask-btns">
-        <button mat-stroked-button class="addtask-btn-clear">Clear <mat-icon fontIcon="close"></mat-icon></button>
+        <button mat-stroked-button class="addtask-btn-clear" (click)="clearTaskForm()">Clear <mat-icon fontIcon="close"></mat-icon></button>
         <button mat-stroked-button [ngClass]="{'disabled': !taskForm.valid}" [disabled]="!taskForm.valid" type="submit"
             class="addtask-btn-task">Create Task <mat-icon fontIcon="check"></mat-icon>
         </button>

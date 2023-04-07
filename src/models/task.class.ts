@@ -3,7 +3,7 @@ export class Task {
     taskDescription: string;
     date: any;
     id: string; //observable über board -> id übergeben
-    prio: string;
+    priority: string;
     category: string;
     assignedContact: string;
 
@@ -12,7 +12,7 @@ export class Task {
         this.taskDescription = obj ? obj.taskDescription : '';
         this.date = obj ? obj.date : '';
         this.id = obj ? obj.id : '';
-        this.prio = obj ? obj.prio : '';
+        this.priority = obj ? obj.priority : '';
         this.category = obj ? obj.category : '';
         this.assignedContact = obj ? obj.assignedContact : '';
     }
@@ -23,7 +23,7 @@ export class Task {
             taskDescription: this.taskDescription,
             date: this.date,
             id: this.id,
-            prio: this.prio,
+            priority: this.priority,
             category: this.category,
             assignedContact: this.assignedContact,
         }

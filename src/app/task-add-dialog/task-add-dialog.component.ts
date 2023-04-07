@@ -44,6 +44,8 @@ export class TaskAddDialogComponent implements OnInit {
     taskTitle: ['', [Validators.required]],
     taskDescription: ['', [Validators.required]],
     date: ['', [Validators.required]],
+    category: [''],
+    assignedTo: [''],
   });
 
   ngOnInit(): void {
@@ -54,8 +56,8 @@ export class TaskAddDialogComponent implements OnInit {
       this.task.taskTitle = this.taskForm.controls['taskTitle'].value;
       this.task.taskDescription = this.taskForm.controls['taskDescription'].value;
       this.task.date = this.taskForm.controls['date'].value;
-      this.task.prio = this.priority;
       this.task.category = this.category;
+      this.task.priority = this.priority;
       console.log("submit");
       this.saveTask();
     }
@@ -73,9 +75,10 @@ export class TaskAddDialogComponent implements OnInit {
 
   saveTask() {
     //console.log("tasktoJSON",this.task.toJSON());
-    console.log('aktueller status prio', this.task.prio);
+    console.log('aktueller status prio', this.task.priority);
     this.taskJson = this.task.toJSON();
     this.client.createTask(this.taskJson);
+    this.clearTaskForm();
   }
 
   resetFormTask() {
@@ -91,5 +94,10 @@ export class TaskAddDialogComponent implements OnInit {
       this.allContacts = contactsData;
     console.log("function called selectContacts", this.allContacts)
   })
+  }
+
+  clearTaskForm() {
+    this.taskForm.reset();
+    this.priority = 'null';
   }
 }

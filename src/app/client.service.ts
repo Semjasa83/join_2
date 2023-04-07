@@ -48,7 +48,6 @@ export class ClientService {
     return collectionData(this.sortedTasks, {idField: 'id',}) as Observable<any>;
   }
 
-
   getContact(id: string) {
     const contactsDocumentReference = doc(this.firestore, `contacts/${id}`);
     return docData(contactsDocumentReference, { idField: 'id' });
