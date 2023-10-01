@@ -2,10 +2,7 @@ import { Component, Injector, OnInit } from '@angular/core';
 import { Firestore, collectionData, collection } from '@angular/fire/firestore';
 import { FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
 import { ClientService } from '../client.service';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Contact } from 'src/models/contact.class';
-import { addDoc } from "firebase/firestore";
-import { Observable } from 'rxjs';
 import { FormBuilder } from "@angular/forms";
 
 @Component({

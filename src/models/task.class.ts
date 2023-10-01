@@ -1,28 +1,31 @@
 export class Task {
-    // firstName: string;
-    // lastName: string;
-    // email: string;
-    // phone: number;
-    // shortTag: string;
-    // id: string;
+    taskTitle: string;
+    taskDescription: string;
+    date: any;
+    id: string; //observable über board -> id übergeben
+    priority: string;
+    category: string;
+    assignedContact: string;
 
-    // constructor (obj?: any) {
-    //     this.firstName = obj ? obj.firstName : '';
-    //     this.lastName = obj ? obj.lastName : '';
-    //     this.email = obj ? obj.email : '';
-    //     this.phone = obj ? obj.phone : '';
-    //     this.shortTag = obj ? obj.shortTag : '';
-    //     this.id = obj ? obj.id : '';
-    // }
+    constructor (obj?: any) {
+        this.taskTitle = obj ? obj.taskTitle : '';
+        this.taskDescription = obj ? obj.taskDescription : '';
+        this.date = obj ? obj.date : '';
+        this.id = obj ? obj.id : '';
+        this.priority = obj ? obj.priority : '';
+        this.category = obj ? obj.category : '';
+        this.assignedContact = obj ? obj.assignedContact : '';
+    }
 
-    // public toJSON() {
-    //     return {
-    //         firstName: this.firstName,
-    //         lastName: this.lastName,
-    //         email: this.email,
-    //         phone: this.phone,
-    //         shortTag: this.shortTag,
-    //         id: this.id
-    //     }
-    // }
+    public toJSON() {
+        return {
+            taskTitle: this.taskTitle,
+            taskDescription: this.taskDescription,
+            date: this.date,
+            id: this.id,
+            priority: this.priority,
+            category: this.category,
+            assignedContact: this.assignedContact,
+        }
+    }
 }
